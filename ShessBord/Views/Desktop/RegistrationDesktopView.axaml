@@ -1,0 +1,215 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ShessBord.ViewModels" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+			 x:DataType="vm:RegistrationViewModel"
+			 mc:Ignorable="d" 
+			 Background="#302E2B"
+             Foreground="White"
+			 d:DesignWidth="800" 
+             x:Class="ShessBord.Views.Desktop.RegistrationDesktopView">
+	<Grid 
+		ColumnDefinitions="*,400,*" 
+		RowDefinitions="*,700,*" >
+		<!--ButtonBack-->
+		<Button 
+			Grid.Column="0" 
+			Grid.Row="0" 
+			Margin="20"
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top"
+			Classes="ButtonTransparent"
+			Command="{Binding NextToAuthenticationCommand}">
+			<Image Height="30" Source="/Assets/icons8-стрелка-100.png"/>
+		</Button>
+		<!--ButtonBack-->
+		
+		<!--ChangeLanguage-->
+		<Button 
+			Grid.Column="2" 
+			Grid.Row="0" 
+			Height="50" 
+			Margin="20"
+			Padding="0"
+			VerticalAlignment="Top" 
+			HorizontalAlignment="Right">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock FontWeight="600" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="#9B9A99" Text="Language"/>
+				<Image Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Source="/Assets/icons8-земной-шар-100.png"/>
+			</StackPanel>
+			<Button.Styles>
+				<Style Selector="Button">
+					<Setter Property="Background" Value="Transparent"/>
+				</Style>
+				<Style Selector="Button:pointerover /template/ContentPresenter">
+					<Setter Property="Background" Value="Transparent"/>
+				</Style>
+				<Style Selector="Button:pressed /template/ContentPresenter">
+					<Setter Property="Background" Value="Transparent"/>
+				</Style>
+				<Style Selector="MenuFlyoutPresenter">
+					<Setter Property="Background" Value="#262421"/> 
+					<Setter Property="BorderBrush" Value="LightGray"/>
+					<Setter Property="BorderThickness" Value="2"/>
+				</Style>
+			</Button.Styles>
+			<Button.Flyout>
+				<MenuFlyout Placement="BottomEdgeAlignedRight">
+					<MenuItem  HorizontalAlignment="Center" Header="Русский" Command="{Binding ChangeLanguageCommand}" Background="#262421" CommandParameter="ru-RU"/>
+					<MenuItem HorizontalAlignment="Center" Header="English" Command="{Binding ChangeLanguageCommand}" Background="#262421" CommandParameter="en-US"/>
+				</MenuFlyout>
+			</Button.Flyout>
+		</Button>
+		<!--ChangeLanguage-->
+		
+		<!--MainPanel-->
+		<StackPanel
+			Grid.Column="1" 
+			Grid.Row="1">
+			<StackPanel Height="100">
+				<Image 
+					HorizontalAlignment="Center" 
+					VerticalAlignment="Center"
+					Source="/Assets/go.png"
+					Height="50"/>
+			</StackPanel>
+			<Border 
+				Background="#262421"
+				CornerRadius="15"
+				Height="600">
+				<Grid 
+					ShowGridLines="False"
+					ColumnDefinitions="*,5*,*"
+					RowDefinitions="70,70,70,70,70,*,100,70">
+					<!--TextMain-->
+					<TextBlock 
+						Grid.Column="1" 
+						Grid.Row="1"
+						Classes="TextBlockDesktop"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Top"
+						Text="{Binding TextRegistration}"/>
+					<!--TextMain-->
+
+					<!--TextBoxName-->
+					<TextBox 
+						Classes="TextBoxMain TextBoxDesktop"
+						Watermark="{Binding TextName}"
+						Text="{Binding Name}"
+						Grid.Column="1" 
+						Grid.Row="2">
+						<TextBox.InnerLeftContent>
+							<StackPanel Height="30" Width="40">
+								<Image Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/icons8-человек-64.png"/>
+							</StackPanel>
+						</TextBox.InnerLeftContent>
+					</TextBox>
+					<!--TextBoxName-->
+					
+					<!--TextBoxEmail-->
+					<TextBox 
+						Classes="TextBoxMain TextBoxDesktop"
+						Watermark="Email"
+						Text="{Binding Email}"
+						Grid.Column="1" 
+						Grid.Row="3">
+						<TextBox.InnerLeftContent>
+							<StackPanel Height="25" Width="40">
+								<Image Width="25" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/email.png"/>
+							</StackPanel>
+						</TextBox.InnerLeftContent>
+					</TextBox>
+					<!--TextBoxEmail-->
+					
+					<!--TextBoxPassword-->
+					<TextBox 
+						Classes="TextBoxMain TextBoxDesktop"
+						Watermark="{Binding TextWatermarkPassword}"
+						PasswordChar="{Binding PasswordChar}"
+						Text="{Binding Password}"
+						Grid.Column="1" 
+						Grid.Row="4">
+						<TextBox.InnerLeftContent>
+							<StackPanel Height="30" Width="40">
+								<Image Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/icons8-замок-64 (1).png"/>
+							</StackPanel>
+						</TextBox.InnerLeftContent>
+						<TextBox.InnerRightContent>
+							<ToggleButton 
+								Classes="ToggleButtonPasswordButton" 
+								IsChecked="{Binding IsVisiblePassword}">
+								<Panel>
+									<Image Classes="Close" Height="22" Source="/Assets/icons8-спрятать-64.png"/>
+									<Image Classes="Open" Height="22" Source="/Assets/icons8-показать-64.png"/>
+								</Panel>
+							</ToggleButton>
+						</TextBox.InnerRightContent>
+					</TextBox>
+					<!--TextBoxPassword-->
+					
+					<!--ErrorAlert-->
+					<Border
+						Grid.Row="5"
+						Grid.Column="1"
+						IsVisible="{Binding Error}"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Top"
+						Background="#472522"
+						CornerRadius="5"
+						Height="50">
+						<TextBlock 
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Center"
+							TextWrapping="Wrap"
+							TextAlignment="Center"
+							Foreground="Brown" 
+							Text="{Binding ErrorText}"/>
+					</Border>
+					<!--ErrorAlert-->
+					
+					<!--ButtonRegister-->
+					<Button 
+						Grid.Row="6" 
+						Grid.Column="1"
+						Margin="0 0 0 40"
+						Classes="ButtonMain"
+						HotKey="Enter"
+						Command="{Binding NextToMenuCommand}">
+						<TextBlock Text="{Binding TextRegister }"/>
+					</Button>
+					<!--ButtonRegister-->
+					
+					<!--ButtonSingUp-->
+					<Button 
+						Grid.Column="0"
+						Grid.ColumnSpan="3"
+						Grid.Row="7"
+						Background="#211F1C"
+						HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						CornerRadius="0 0 15 15"
+						Command="{Binding NextToAuthenticationCommand}">
+						<TextBlock 
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Foreground="LightGray"
+							FontWeight="600"
+							Text="{Binding TextDoYouAlreadyHaveAnAccount}">
+						</TextBlock>
+						<Button.Styles>
+							<Style Selector="Button:pointerover /template/ContentPresenter">
+								<Setter Property="Background" Value="#211F1C"/>
+							</Style>
+							<Style Selector="Button:pressed /template/ContentPresenter">
+								<Setter Property="Background" Value="#211F1C"/>
+							</Style>
+						</Button.Styles>
+					</Button>
+					<!--ButtonSingUp-->
+				</Grid>
+			</Border>
+		</StackPanel>
+		<!--MainPanel-->
+	</Grid>
+</UserControl>

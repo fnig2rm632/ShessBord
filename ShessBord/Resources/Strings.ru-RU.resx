@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="SingUpButton" xml:space="preserve">
+        <value>Новый? Регистрация - начни играть!</value>
+    </data>
+    <data name="WatermarkLogin" xml:space="preserve">
+        <value>Логин, Телефон или Email</value>
+    </data>
+    <data name="WatermarkPassword" xml:space="preserve">
+        <value>Пароль</value>
+    </data>
+    <data name="ForgotPassword" xml:space="preserve">
+        <value>Забыл телефон?</value>
+    </data>
+    <data name="LogIn" xml:space="preserve">
+        <value>Вход</value>
+    </data>
+    <data name="Language" xml:space="preserve">
+        <value>Язык</value>
+    </data>
+    <data name="SingUpButtonAndroid" xml:space="preserve">
+        <value>Регистрация</value>
+    </data>
+    <data name="Submit" xml:space="preserve">
+        <value>Отправить</value>
+    </data>
+    <data name="Play" xml:space="preserve">
+        <value>Играть</value>
+    </data>
+    <data name="Friend" xml:space="preserve">
+        <value>Друзья</value>
+    </data>
+    <data name="AboutUs" xml:space="preserve">
+        <value>О нас</value>
+    </data>
+    <data name="Settings" xml:space="preserve">
+        <value>Настройки</value>
+    </data>
+    <data name="RollUp" xml:space="preserve">
+        <value>Свернуть</value>
+    </data>
+    <data name="Play10" xml:space="preserve">
+        <value>Играть ~ 10 мин.</value>
+    </data>
+    <data name="Play5" xml:space="preserve">
+        <value>Играть ~ 5 мин.</value>
+    </data>
+    <data name="PlayWithFriends" xml:space="preserve">
+        <value>Играть c друзьями</value>
+    </data>
+    <data name="NewGame" xml:space="preserve">
+        <value>Новая игра</value>
+    </data>
+    <data name="Statistics" xml:space="preserve">
+        <value>Cтатистика</value>
+    </data>
+    <data name="Parties" xml:space="preserve">
+        <value>Партии</value>
+    </data>
+    <data name="Bullet" xml:space="preserve">
+        <value>Пуля</value>
+    </data>
+    <data name="Rapid" xml:space="preserve">
+        <value>Рапид</value>
+    </data>
+    <data name="Blitz" xml:space="preserve">
+        <value>Блиц</value>
+    </data>
+    <data name="Wins" xml:space="preserve">
+        <value>Победы</value>
+    </data>
+    <data name="ArchiveOfParties" xml:space="preserve">
+        <value>Архив партий</value>
+    </data>
+    <data name="View" xml:space="preserve">
+        <value>Вид</value>
+    </data>
+    <data name="Time" xml:space="preserve">
+        <value>Время</value>
+    </data>
+    <data name="Opponent" xml:space="preserve">
+        <value>Противник</value>
+    </data>
+    <data name="Result" xml:space="preserve">
+        <value>Результат</value>
+    </data>
+    <data name="Moves" xml:space="preserve">
+        <value>Ходы</value>
+    </data>
+    <data name="Data" xml:space="preserve">
+        <value>Дата</value>
+    </data>
+    <data name="BoardSize" xml:space="preserve">
+        <value>Размер доски</value>
+    </data>
+    <data name="TimeControl" xml:space="preserve">
+        <value>Контроль времени</value>
+    </data>
+    <data name="Application1" xml:space="preserve">
+        <value>Привет! Меня зовут Гамов Артём, и это мой проект — Go-приложение на Avalonia UI.</value>
+    </data>
+    <data name="WhatThis" xml:space="preserve">
+        <value>Что это?</value>
+    </data>
+    <data name="Application2" xml:space="preserve">
+        <value>Классическая настольная игра Go (также известная как "Вейци") с простым и удобным интерфейсом.</value>
+    </data>
+    <data name="Application4" xml:space="preserve">
+        <value>Подходит как для новичков, так и для опытных игроков.</value>
+    </data>
+    <data name="Application3" xml:space="preserve">
+        <value>Написана на C# с использованием фреймворка Avalonia UI для кроссплатформенной работы (Windows, Linux, macOS).</value>
+    </data>
+    <data name="WhyGo" xml:space="preserve">
+        <value>Почему Go?</value>
+    </data>
+    <data name="Application5" xml:space="preserve">
+        <value>Go — одна из древнейших стратегических игр, сочетающая простые правила с глубокой тактикой. Моя цель — сделать её доступной в цифровом формате, сохранив элегантность и атмосферу.</value>
+    </data>
+    <data name="Technologies" xml:space="preserve">
+        <value>Технологии</value>
+    </data>
+    <data name="Contacts" xml:space="preserve">
+        <value>Контакты</value>
+    </data>
+    <data name="Application6" xml:space="preserve">
+        <value>Avalonia UI — для красивых и отзывчивых интерфейсов.</value>
+    </data>
+    <data name="Application7" xml:space="preserve">
+        <value>ReactiveUI — для чистого и гибкого кода.</value>
+    </data>
+    <data name="Application8" xml:space="preserve">
+        <value>.NET — как основа надежности и производительности.</value>
+    </data>
+    <data name="Application9" xml:space="preserve">
+        <value>Хотите предложить идею или сообщить об ошибке? Пишите:</value>
+    </data>
+    <data name="TextSearchByName" xml:space="preserve">
+        <value>Поиск по имени или по имени пользователя</value>
+    </data>
+    <data name="InvalidPasswordOrEmailAddress" xml:space="preserve">
+        <value>Неверный пароль или Email</value>
+    </data>
+    <data name="Registration" xml:space="preserve">
+        <value>Регистарация</value>
+    </data>
+    <data name="Register" xml:space="preserve">
+        <value>Зарегистрироваться</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Имя</value>
+    </data>
+    <data name="IsValid" xml:space="preserve">
+        <value>Подходит</value>
+    </data>
+    <data name="PasswordCannotContainSpaces" xml:space="preserve">
+        <value>Пароль не может содержатьпробелы</value>
+    </data>
+    <data name="PasswordMustContainSpecialChar" xml:space="preserve">
+        <value>Пароль должен содержать специальные символы</value>
+    </data>
+    <data name="PasswordMustContainUppercase" xml:space="preserve">
+        <value>Пароль должен содержать Заглыные буквы</value>
+    </data>
+    <data name="PasswordMustContainLowercase" xml:space="preserve">
+        <value>Пароль должен содержать строчные буквы</value>
+    </data>
+    <data name="PasswordMustBeAtLeast8Characters" xml:space="preserve">
+        <value>Пароль должен содержать 8 символов</value>
+    </data>
+    <data name="PasswordCannotBeEmpty" xml:space="preserve">
+        <value>Пароль не может быть пустым</value>
+    </data>
+    <data name="DoYouAlreadyHaveAnAccount" xml:space="preserve">
+        <value>У вас уже есть аккаунт?</value>
+    </data>
+    <data name="PasswordMustContainNumber" xml:space="preserve">
+        <value>Пароль должен содержать цыфры</value>
+    </data>
+    <data name="EmailCannotBeEmpty" xml:space="preserve">
+        <value>Email не может быть пустым</value>
+    </data>
+    <data name="NameCannotBeEmpty" xml:space="preserve">
+        <value>Имя не может быть пустым</value>
+    </data>
+    <data name="IsNotAnEmail" xml:space="preserve">
+        <value>Не является Email</value>
+    </data>
+    <data name="EmailMustNotContainSpecialCharacters" xml:space="preserve">
+        <value>Email не может содержать странных символов</value>
+    </data>
+    <data name="NameMustNotContainSpecialCharacters" xml:space="preserve">
+        <value>Имя не может содержать странных символов</value>
+    </data>
+    <data name="PasswordMustNotContainSpecialCharacters" xml:space="preserve">
+        <value>Пароль не может содержать странных символов</value>
+    </data>
+    <data name="PlayerWhite" xml:space="preserve">
+        <value>Игрок белых</value>
+    </data>
+    <data name="PlayerBlack" xml:space="preserve">
+        <value>Игрок черных</value>
+    </data>
+    <data name="SizeBoard" xml:space="preserve">
+        <value>Размер доски</value>
+    </data>
+</root>

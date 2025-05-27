@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:rxui="clr-namespace:ReactiveUI;assembly=ReactiveUI.Avalonia"
+             xmlns:reactiveUi="http://reactiveui.net"
+             xmlns:vm="clr-namespace:ShessBord.ViewModels"
+             x:DataType="vm:MainWindowViewModel"
+             xmlns:shessBord="clr-namespace:ShessBord"
+             xmlns:services="clr-namespace:ShessBord.Services"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+             Background="#302E2B"
+             x:Class="ShessBord.Views.Android.MainView">
+	<UserControl.Resources>
+		<services:AppViewLocator x:Key="ViewLocator" />
+	</UserControl.Resources>
+	
+	<reactiveUi:RoutedViewHost 
+		Router="{Binding Router}"
+		ViewLocator="{StaticResource ViewLocator}" />
+</UserControl>

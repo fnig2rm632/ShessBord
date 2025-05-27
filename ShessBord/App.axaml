@@ -1,0 +1,295 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:ShessBord"
+             x:Class="ShessBord.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        
+        <Style Selector="ListBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        
+        <Style Selector="ListBoxItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Style Selector="^:selected /template/ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Window">
+            <Setter Property="FontFamily" Value="/Resources/Fonts/defold/SourceCodePro-Black.ttf"/>
+        </Style>
+        
+        <Style Selector="Button.ToggleButtonChoose">
+            <Setter Property="Background" Value="#262522"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Style Selector="^:pressed /template/ContentPresenter">
+                <Setter Property="Background" Value="#262522"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderBrush" Value="DodgerBlue"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="#262522"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderBrush" Value="DodgerBlue"/>
+            </Style>
+            <Style Selector="^ > TextBlock" >
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="500"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="TextBox.TextBoxMain">
+            <Setter Property="Background" Value="#373532"/>
+            <Setter Property="Foreground" Value="#BABABA"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderBrush" Value="#9B9A99"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Style Selector="^:pointerover /template/ Border">
+                <Setter Property="Background" Value="#373532"/>
+                <Setter Property="BorderBrush" Value="#9B9A99"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+            <Style Selector="^:focus /template/ Border">
+                <Setter Property="Background" Value="#373532"/>
+                <Setter Property="BorderBrush" Value="#BABABA"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="TextBox.TextBoxAndroid">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="FontWeight" Value="600"/>
+        </Style>
+        
+        <Style Selector="TextBox.TextBoxDesktop">
+            <Setter Property="FontSize" Value="14"/>            
+            <Setter Property="Height" Value="42"/>
+        </Style>
+        
+        
+        <Style Selector="TextBlock.TextBlockAndroid">
+            <Setter Property="FontSize" Value="35"/>            
+            <Setter Property="FontWeight" Value="700"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+        </Style>
+        
+        <Style Selector="TextBlock.TextBlockDesktop">
+            <Setter Property="FontSize" Value="30"/>            
+            <Setter Property="FontWeight" Value="700"/>
+            <Setter Property="Foreground" Value="LightGray"/>
+        </Style>
+        
+        <Style Selector="ToggleButton.ToggleButtonPasswordButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Style Selector="^:pointerover  /template/ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            <Style Selector="^:checked /template/ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            <Style Selector="^ Image.Close">
+                <Setter Property="IsVisible" Value="False"/>	
+            </Style>
+            <Style Selector="^:checked Image.Close">
+                <Setter Property="IsVisible" Value="True"/>
+            </Style>
+            <Style Selector="^ Image.Open">
+                <Setter Property="IsVisible" Value="True"/>
+            </Style>
+            <Style Selector="^:checked Image.Open">
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Button.ButtonTransparent">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style Selector="^:pressed /template/ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style Selector="^:pointerover /template/Border">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style Selector="^:pressed /template/Border">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Button.ButtonSettings">
+            <Setter Property="Background" Value="#373633"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#454441"/>
+            <Setter Property="Margin" Value="20 10"/>
+            <Style Selector="^ > TextBlock">
+                <Setter Property="Foreground" Value="#ACAB9D"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="400"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="#373633"/>
+                <Setter Property="BorderBrush" Value="#454441"/>
+            </Style>
+            <Style Selector="^:pressed /template/ContentPresenter">
+                <Setter Property="Background" Value="#373633"/>
+                <Setter Property="BorderBrush" Value="#454441"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Button.ButtonMain">
+            <Setter Property="Background" Value="DodgerBlue"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="BorderThickness" Value="0 0 0 5"/>
+            <Setter Property="BorderBrush" Value="MidnightBlue"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Style Selector="^ > TextBlock">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="FontWeight" Value="700"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="DodgerBlue"/>
+                <Setter Property="BorderBrush" Value="MidnightBlue"/>
+                <Setter Property="BorderThickness" Value="0 0 0 5"/>
+            </Style>
+            <Style Selector="^:pressed /template/ContentPresenter">
+                <Setter Property="Background" Value="DodgerBlue"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Button.ButtonMenu">
+            <Setter Property="Background" Value="#262522"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Height" Value="76"/>
+            <Setter Property="BorderThickness" Value="0 0 0 6"/>
+            <Setter Property="BorderBrush" Value="#1D1C1A"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Style Selector="^ > StackPanel > TextBlock">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontWeight" Value="700"/>
+            </Style>
+            <Style Selector="^ > TextBlock">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="FontWeight" Value="700"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="#262522"/>
+                <Setter Property="BorderBrush" Value="#1D1C1A"/>
+                <Setter Property="BorderThickness" Value="0 0 0 5"/>
+            </Style>
+            <Style Selector="^:pressed /template/ContentPresenter">
+                <Setter Property="Background" Value="#262522"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Button.LeftButtonPanel">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="70"/>
+            <Style Selector="^ > StackPanel > TextBlock">
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontWeight" Value="500"/>
+            </Style>
+            <Style Selector="^ > StackPanel > Image">
+                <Setter Property="Margin" Value="10 0 15 0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Height" Value="30"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Background" Value="#201F1E"/>
+            </Style>
+            <Style Selector="^:pressed /template/ContentPresenter">
+                <Setter Property="Background" Value="#201F1E"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="TextBlock.TextBlockGrid">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#C1C0C0"/>
+        </Style>
+        
+        <Style Selector="TextBlock.TextBlockTitle">
+            <Setter Property="Foreground" Value="#C1C0C0"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="600"/>
+        </Style>
+        
+        <Style Selector="Button.HideSettings">
+            <Setter Property="Foreground" Value="#9B9A99"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            
+            <Style Selector="^:pointerover /template/ContentPresenter">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Background" Value="#201F1E"/>
+            </Style>
+            <Style Selector="^ TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style Selector="^ Image.Defold">
+                <Setter Property="IsVisible" Value="True"/>
+                <Setter Property="Margin" Value="8 0 14 0"/>
+            </Style>
+            <Style Selector="^ Image.Select">
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+            <Style Selector="^:pointerover Image.Select">
+                <Setter Property="IsVisible" Value="True"/>
+                <Setter Property="Margin" Value="8 0 14 0"/>
+            </Style>
+            <Style Selector="^:pointerover Image.Defold">
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+        </Style>
+        <FluentTheme />
+        <StyleInclude Source="/Controls/GoGameBoardControl.axaml"/>
+    </Application.Styles>
+</Application>

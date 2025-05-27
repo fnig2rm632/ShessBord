@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ShessBord.ViewModels" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+			 x:DataType="vm:AccountViewModel"
+			 mc:Ignorable="d" 
+			 Background="#302E2B"
+             Foreground="White"
+			 d:DesignWidth="800" 
+             x:Class="ShessBord.AccountDesktopView">
+	
+	<Grid 
+		ColumnDefinitions="Auto,*" >
+		<!--LeftPanel-->
+		<Grid RowDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto,15" HorizontalAlignment="Left" Grid.Column="0" Width="{Binding WeightPanel}" Background="#262522">
+			<!--MainButton-->
+			<Button Grid.Row="0" Classes="LeftButtonPanel" HorizontalContentAlignment="Left" Command="{Binding NextToMenuCommand}">
+				<Image Margin="8 0 0 0" Height="27" HorizontalAlignment="Left" Source="{Binding BitmapLogo}"/>
+			</Button>
+			<!--MainButton-->
+			
+			<!--PlayButton-->
+			<Button Grid.Row="1" Classes="LeftButtonPanel" Command="{Binding NextToPlayCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Assets/icons8-start-48.png" />
+					<TextBlock Text="{Binding TextPlay}"/>
+				</StackPanel>
+			</Button>
+			<!--PlayButton-->
+			
+			<!--FriendsButton-->
+			<Button Grid.Row="2" Classes="LeftButtonPanel" Command="{Binding NextToFriendsCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Assets/icons8-friend-64.png" />
+					<TextBlock Text="{Binding TextFriend}"/>
+				</StackPanel>
+			</Button>
+			<!--FriendsButton-->
+			
+			<!--AboutUsButton-->
+			<Button Grid.Row="3" Classes="LeftButtonPanel" Command="{Binding NextToAboutUsCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="26" Source="/Assets/icons8-information-47.png" />
+					<TextBlock Text="{Binding TextAboutUs}"/>
+				</StackPanel>
+			</Button>
+			<!--AboutUsButton-->
+			
+			<!--SettingsButton-->
+			<Button 
+				Grid.Row="5" 
+				Classes="HideSettings"
+				Command="{Binding NextToSettingsCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="Select" Source="/Assets/select-nastroiki.png"/>
+					<Image Classes="Defold" Source="/Assets/nastroiki.png"/>
+					<TextBlock Text="{Binding TextSettings}"/>
+				</StackPanel>
+			</Button>
+			<!--SettingsButton-->
+			
+			<!--HidePanelButton-->
+			<Button 
+				Grid.Row="6"
+				Classes="HideSettings"
+				Command="{Binding HidePanelCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="Select" Source="/Assets/select-left.png"/>
+					<Image Classes="Defold" Source="/Assets/noselectleft.png"/>
+					<TextBlock Text="{Binding TextRowUp}"/>
+				</StackPanel>
+			</Button>
+			<!--HidePanelButton-->
+		</Grid>
+		<!--LeftPanel-->
+
+		<!--AccountBlock-->
+		<Grid RowDefinitions="100,360,Auto" HorizontalAlignment="Center" Width="1000" Grid.Column="1" Grid.Row="0">
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="AccountBlock"/>
+		</Grid>
+		<!--AccountBlock-->
+	</Grid>
+</UserControl>

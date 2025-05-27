@@ -1,0 +1,160 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+    <None Remove="Resources\Fonts\defold\SourceCodePro-Black.ttf" />
+    <AvaloniaResource Include="Resources\Fonts\defold\SourceCodePro-Black.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Diagnostics" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="Avalonia.Fonts.Inter" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia.ReactiveUI" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Android\AuthenticationAndroidView.axaml.cs">
+      <DependentUpon>FirstView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\AuthenticationDesktopView.axaml.cs">
+      <DependentUpon>AuthenticationView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\MainView.axaml.cs">
+      <DependentUpon>MainView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\MainWindow.axaml.cs">
+      <DependentUpon>MainWindow.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Resources\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Strings.ru-RU.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Strings.en-US.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Android\ForgotPasswordAndroidView.axaml.cs">
+      <DependentUpon>ForgotPasswordAndroidView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\ForgotPasswordDesktopView.axaml.cs">
+      <DependentUpon>ForgotPasswordDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\MenuDesktopView.axaml.cs">
+      <DependentUpon>MenuDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\MenuAndroidView.axaml.cs">
+      <DependentUpon>MenuDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\PlayDesktopView.axaml.cs">
+      <DependentUpon>MenuAndroidView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\PlayAndroidView.axaml.cs">
+      <DependentUpon>PlayDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\AboutUsDesktopView.axaml.cs">
+      <DependentUpon>AboutUsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\AboutUsAndroidView.axaml.cs">
+      <DependentUpon>AboutUsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\FriendsDesktopView.axaml.cs">
+      <DependentUpon>FriendsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\FriendsAndroidView.axaml.cs">
+      <DependentUpon>FriendsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\HistoryDesktopView.axaml.cs">
+      <DependentUpon>AboutUsAndroidView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\HistoryAndroidView.axaml.cs">
+      <DependentUpon>HistoryDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\SettingsDesktopView.axaml.cs">
+      <DependentUpon>SettingsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\SettingsAndroidView.axaml.cs">
+      <DependentUpon>SettingsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\AccountDesktopView.axaml.cs">
+      <DependentUpon>AccountDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\AccountAndroidView.axaml.cs">
+      <DependentUpon>AccountDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\GoGameBoardControl.axaml.cs">
+      <DependentUpon>AboutUsDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\RegistrationDesktopView.axaml.cs">
+      <DependentUpon>RegistrationDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\RegistrationAndroidView.axaml.cs">
+      <DependentUpon>RegistrationAndroidView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Desktop\MatchDesktopView.axaml.cs">
+      <DependentUpon>MatchDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Android\MatchAndroidView.axaml.cs">
+      <DependentUpon>MatchDesktopView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

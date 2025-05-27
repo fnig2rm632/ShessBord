@@ -1,0 +1,323 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ShessBord.ViewModels" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+			 x:DataType="vm:MenuViewModel"
+			 mc:Ignorable="d" 
+			 Background="#302E2B"
+             Foreground="White"
+			 d:DesignWidth="800" 
+             x:Class="ShessBord.MenuDesktopView">
+	
+	<Grid 
+		ColumnDefinitions="Auto,*" >
+		<!--LeftPanel-->
+		<Grid RowDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto,15" HorizontalAlignment="Left" Grid.Column="0" Width="{Binding WeightPanel}" Background="#262522">
+			<!--MainButton-->
+			<Button Grid.Row="0" Classes="LeftButtonPanel" HorizontalContentAlignment="Left" Command="{Binding NextToMenuCommand}">
+				<Image Margin="8 0 0 0" Height="27" HorizontalAlignment="Left" Source="{Binding BitmapLogo}"/>
+			</Button>
+			<!--MainButton-->
+			
+			<!--PlayButton-->
+			<Button Grid.Row="1" Classes="LeftButtonPanel" Command="{Binding NextToPlayCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Assets/icons8-start-48.png" />
+					<TextBlock Text="{Binding TextPlay}"/>
+				</StackPanel>
+			</Button>
+			<!--PlayButton-->
+			
+			<!--FriendsButton-->
+			<Button Grid.Row="2" Classes="LeftButtonPanel" Command="{Binding NextToFriendsCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="/Assets/icons8-friend-64.png" />
+					<TextBlock Text="{Binding TextFriend}"/>
+				</StackPanel>
+			</Button>
+			<!--FriendsButton-->
+			
+			<!--AboutUsButton-->
+			<Button Grid.Row="3" Classes="LeftButtonPanel" Command="{Binding NextToAboutUsCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Height="26" Source="/Assets/icons8-information-47.png" />
+					<TextBlock Text="{Binding TextAboutUs}"/>
+				</StackPanel>
+			</Button>
+			<!--AboutUsButton-->
+			
+			<!--SettingsButton-->
+			<Button 
+				Grid.Row="5" 
+				Classes="HideSettings"
+				Command="{Binding NextToSettingsCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="Select" Source="/Assets/select-nastroiki.png"/>
+					<Image Classes="Defold" Source="/Assets/nastroiki.png"/>
+					<TextBlock Text="{Binding TextSettings}"/>
+				</StackPanel>
+			</Button>
+			<!--SettingsButton-->
+			
+			<!--HidePanelButton-->
+			<Button 
+				Grid.Row="6"
+				Classes="HideSettings"
+				Command="{Binding HidePanelCommand}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="Select" Source="/Assets/select-left.png"/>
+					<Image Classes="Defold" Source="/Assets/noselectleft.png"/>
+					<TextBlock Text="{Binding TextRowUp}"/>
+				</StackPanel>
+			</Button>
+			<!--HidePanelButton-->
+		</Grid>
+		<!--LeftPanel-->
+
+		<!--MainBlock-->
+		<Grid RowDefinitions="100,360,Auto" HorizontalAlignment="Center" Width="1000" Grid.Column="1" Grid.Row="0">
+			<!--FirstLevel-->
+			<DockPanel Margin="0 30 0 5" Grid.Row="0">
+				<!--Player-->
+				<StackPanel  Height="50" Width="500">
+					<TextBlock Text="{Binding User.Username}" Margin="0 10 0 0" FontSize="27" FontWeight="600" Foreground="#9B9A99"/>
+				</StackPanel>
+				<!--Player-->
+				
+				<!--ChangeLanguage-->
+				<Button 
+					Height="50" 
+					Padding="0"
+					VerticalAlignment="Center" 
+					HorizontalAlignment="Right" 
+					Classes="ButtonTransparent">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock FontWeight="600" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="#9B9A99" Text="Language"/>
+						<Image Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Source="/Assets/icons8-земной-шар-100.png"/>
+					</StackPanel>
+					<Button.Styles>
+						<Style Selector="MenuFlyoutPresenter">
+							<Setter Property="Background" Value="#262421"/> 
+							<Setter Property="BorderBrush" Value="LightGray"/>
+							<Setter Property="BorderThickness" Value="2"/>
+						</Style>
+					</Button.Styles>
+					<Button.Flyout>
+						<MenuFlyout Placement="BottomEdgeAlignedRight">
+							<MenuItem HorizontalAlignment="Center" Header="Русский" Command="{Binding ChangeLanguageCommand}" Background="#262421" CommandParameter="ru-RU"/>
+							<MenuItem HorizontalAlignment="Center" Header="English" Command="{Binding ChangeLanguageCommand}" Background="#262421" CommandParameter="en-US"/>
+						</MenuFlyout>
+					</Button.Flyout>
+				</Button>
+				<!--ChangeLanguage-->
+			</DockPanel>
+			<!--FirstLevel-->
+			
+			<!--SecondLevel-->
+			<StackPanel Orientation="Horizontal"  Grid.Row="1">
+				<!--BlockButtons-->
+				<StackPanel
+					Width="300"
+					Height="360">
+					<!--FirstButton-->
+					<Button 
+						Classes="ButtonMenu">
+						<StackPanel Orientation="Horizontal">
+							<Image Margin="10 0" Height="45" Source="/Assets/Oclock.png"/>
+							<TextBlock Text="{Binding TextPlay10}"/>
+						</StackPanel>
+					</Button>
+					<!--FirstButton-->
+					
+					<!--SecondButton-->
+					<Button 
+						Margin="0 18 0 0 " 
+						Classes="ButtonMenu">
+						<StackPanel Orientation="Horizontal">
+							<Image Margin="10 0" Height="45" Source="/Assets/Oclock-fast.png"/>
+							<TextBlock Text="{Binding TextPlay5}"/>
+						</StackPanel>
+					</Button>
+					<!--SecondButton-->
+					
+					<!--ThirdButton-->
+					<Button 
+						Margin="0 18 0 0 " 
+						Classes="ButtonMenu"
+						Command="{Binding NextToFriendsCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Image Margin="10 0" Height="50" Source="/Assets/Hands.png"/>
+							<TextBlock Text="{Binding TextPlayWithFriends}"/>
+						</StackPanel>
+					</Button>
+					<!--ThirdButton-->
+
+					<!--FourthButton-->
+					<Button 
+						Margin="0 18 0 0 " 
+						Classes="ButtonMenu"
+						Command="{Binding NextToPlayCommand}">
+						<StackPanel Orientation="Horizontal">
+							<Image Margin="10 0" Height="50" Source="/Assets/Hand.png"/>
+							<TextBlock Text="{Binding TextNewGame}"/>
+						</StackPanel>
+					</Button>
+					<!--FourthButton-->
+				</StackPanel>
+				<!--BlockButtons-->
+				
+				<!--Statistics-->
+				<Border
+					CornerRadius="5"
+					Margin="30 0"
+					Width="280"
+					Height="360"
+					Background="#262522">
+					<StackPanel>
+						<!--GoToAccount-->
+						<Button 
+							Classes="ButtonTransparent" 
+							HorizontalAlignment="Stretch" 
+							Height="50"
+							Command="{Binding NextToAccountCommand}">
+							<DockPanel>
+								<TextBlock 
+									Margin="10 0 0 0"
+									FontSize="16" 
+									FontWeight="500" 
+									VerticalAlignment="Center" 
+									Foreground="#DFDFDE"
+									Text="{Binding TextStatistic}"/>
+								<Image Margin="5" HorizontalAlignment="Right" Source="/Assets/vector.png" Height="30"/>
+							</DockPanel>
+						</Button>
+						<!--GoToAccount-->
+						
+						<!--CountGames-->
+						<Border Height="60" BorderBrush="#3C3B39" BorderThickness="0 1 0 0" HorizontalAlignment="Stretch" Margin="15 0">
+							<DockPanel VerticalAlignment="Center">
+								<DockPanel VerticalAlignment="Center">
+									<Image Height="25" Margin="5 0" Source="/Assets/icons8-count-40.png"/>
+									<TextBlock VerticalAlignment="Center" Foreground="#DFDFDE" FontSize="14" FontWeight="500"  Text="{Binding TextParties}"/>
+								</DockPanel>
+								<TextBlock Foreground="#DFDFDE" FontSize="14" FontWeight="500" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Statistic.Parties}"/>
+							</DockPanel>
+						</Border>
+						<!--CountGames-->
+						
+						<!--FastGame-->
+						<Border Height="60" BorderBrush="#3C3B39" BorderThickness="0 1 0 0" HorizontalAlignment="Stretch" Margin="15 0">
+							<DockPanel VerticalAlignment="Center">
+								<DockPanel VerticalAlignment="Center">
+									<Image Height="35"  Source="/Assets/pula.png"/>
+									<TextBlock VerticalAlignment="Center" Foreground="#DFDFDE" FontSize="14" FontWeight="500"  Text="{Binding TextBullet}"/>
+								</DockPanel>
+								<TextBlock Foreground="#DFDFDE" FontSize="14" FontWeight="500" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Statistic.Bullet}"/>
+							</DockPanel>
+						</Border>
+						<!--FastGame-->
+						
+						<!--NormGame-->
+						<Border Height="60" BorderBrush="#3C3B39" BorderThickness="0 1 0 0" HorizontalAlignment="Stretch" Margin="15 0">
+							<DockPanel VerticalAlignment="Center">
+								<DockPanel VerticalAlignment="Center">
+									<Image Height="35"  Source="/Assets/rapid.png"/>
+									<TextBlock VerticalAlignment="Center" Foreground="#DFDFDE" FontSize="14" FontWeight="500"  Text="{Binding TextRapid}"/>
+								</DockPanel>
+								<TextBlock Foreground="#DFDFDE" FontSize="14" FontWeight="500" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Statistic.Rapid}"/>
+							</DockPanel>
+						</Border>
+						<!--NormGame-->
+						
+						<!--SlowGame-->
+						<Border Height="60" BorderBrush="#3C3B39" BorderThickness="0 1 0 0" HorizontalAlignment="Stretch" Margin="15 0">
+							<DockPanel VerticalAlignment="Center">
+								<DockPanel VerticalAlignment="Center">
+									<Image Height="35"  Source="/Assets/blitz.png"/>
+									<TextBlock VerticalAlignment="Center" Foreground="#DFDFDE" FontSize="14" FontWeight="500"  Text="{Binding TextBlitz}"/>
+								</DockPanel>
+								<TextBlock Foreground="#DFDFDE" FontSize="14" FontWeight="500" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Statistic.Blitz}"/>
+							</DockPanel>
+						</Border>
+						<!--SlowGame-->
+						
+						<!--Wins-->
+						<Border Height="60" BorderBrush="#3C3B39" BorderThickness="0 1 0 0" HorizontalAlignment="Stretch" Margin="15 0">
+							<DockPanel VerticalAlignment="Center">
+								<DockPanel VerticalAlignment="Center">
+									<Image Height="25" Margin="5 0"  Source="/Assets/icons8-win-48.png"/>
+									<TextBlock VerticalAlignment="Center" Foreground="#DFDFDE" FontSize="14" FontWeight="500"  Text="{Binding TextWins}"/>
+								</DockPanel>
+								<TextBlock Foreground="#DFDFDE" FontSize="14" FontWeight="500" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding Statistic.Win}"/>
+							</DockPanel>
+						</Border>
+						<!--Wins-->
+					</StackPanel>
+				</Border>
+				<!--Statistics-->
+				
+				<!--ImageGame-->
+				<Image HorizontalAlignment="Right" Height="360" Source="/Assets/BoardImage.png"/>
+				<!--ImageGame-->
+			</StackPanel>
+			<!--SecondLevel-->
+			
+			<!--ThirdLevel-->
+			<Border
+				CornerRadius="5"
+				MinHeight="400" 
+				Margin="0 15 0 0"
+				Background="#262522" 
+				Grid.Row="2">
+				<StackPanel>
+					<Button 
+						Classes="ButtonTransparent" 
+						Command="{Binding NextToHistoryCommand}"
+						HorizontalAlignment="Stretch" 
+						Height="50">
+						<DockPanel>
+							<TextBlock 
+								Margin="10 0 0 0"
+								FontSize="16" 
+								FontWeight="500" 
+								Foreground="#DFDFDE"
+								VerticalAlignment="Center" 
+								Text="{Binding TextArchiveOfParties}"/>
+							<Image Margin="5" HorizontalAlignment="Right" Source="/Assets/vector.png" Height="30"/>
+						</DockPanel>
+					</Button>
+					<Grid ColumnDefinitions="*,*,*,*,*,1.5*" Height="35" HorizontalAlignment="Stretch" Background="#1F1E1C">
+						<TextBlock Grid.Column="0" Classes="TextBlockGrid" Text="{Binding TextView}"/>
+						<TextBlock Grid.Column="1" Classes="TextBlockGrid" Text="{Binding TextTime}"/>
+						<TextBlock Grid.Column="2" Classes="TextBlockGrid" Text="{Binding TextPlayerWhite}"/>
+						<TextBlock Grid.Column="3" Classes="TextBlockGrid" Text="{Binding TextPlayerBlack}"/>
+						<TextBlock Grid.Column="4" Classes="TextBlockGrid" Text="{Binding TextSizeBoard}"/>
+						<TextBlock Grid.Column="5" Classes="TextBlockGrid" Text="{Binding TextData}"/>
+					</Grid>
+					<ListBox ItemsSource="{Binding User.Games}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<Border>
+									<StackPanel>
+										<Grid ColumnDefinitions="*,*,*,*,*,1.5*" Height="50" HorizontalAlignment="Stretch">
+											<TextBlock Grid.Column="0" Classes="TextBlockGrid" Text="{Binding Type}"/>
+											<TextBlock Grid.Column="1" Classes="TextBlockGrid" Text="{Binding Time}"/>
+											<TextBlock Grid.Column="2" Classes="TextBlockGrid" Text="{Binding PlayerWhiteName}"/>
+											<TextBlock Grid.Column="3" Classes="TextBlockGrid" Text="{Binding PlayerBlackName}"/>
+											<TextBlock Grid.Column="4" Classes="TextBlockGrid" Text="{Binding  SizeBoard}"/>
+											<TextBlock Grid.Column="5" Classes="TextBlockGrid" Text="{Binding StartTime}"/>
+										</Grid>
+										<Border HorizontalAlignment="Stretch" Margin="20 0" BorderBrush="#9B9A99" BorderThickness="0 0 0 1"/>
+									</StackPanel>
+								</Border>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+			</Border>
+			<!--ThirdLevel-->
+		</Grid>
+		<!--MainBlock-->
+	</Grid>
+</UserControl>

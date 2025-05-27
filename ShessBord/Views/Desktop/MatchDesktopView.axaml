@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ShessBord.ViewModels"
+			 xmlns:controls="clr-namespace:ShessBord.Controls"
+			 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+			 x:DataType="vm:MatchViewModel"
+			 mc:Ignorable="d" 
+			 Background="#302E2B"
+             Foreground="White"
+			 d:DesignWidth="800" 
+             x:Class="ShessBord.MatchDesktopView">
+	
+	<Grid 
+		Width="1240"
+		ColumnDefinitions="Auto,*">
+		
+		<controls:GoGameBoardControl
+			Grid.Column="0"
+			MoveMadeCommand="{Binding MovedCommand}"
+			Cells="{Binding Cells}"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			IsConfirmationMode="False"
+			IsLineSelection="False"
+			SelectedSide="{Binding CurrentPlayer}"
+			SizeBoard="{Binding Size}"
+			Width="800"
+			Height="800"/>
+		
+		<Border Grid.Column="1" Margin="40 0 0 0" Background="#262522" CornerRadius="10" Height="800" Width="400" >
+			<StackPanel Margin="20">
+				<TextBlock Text="{Binding GameStatus}"/>
+				<Border 
+					CornerRadius="10"
+					Background="Gray">
+					<StackPanel>
+						<Button Classes="ButtonMain" Command="{Binding NextToMenuCommand}" VerticalAlignment="Bottom">
+							<TextBlock> Выйти</TextBlock>
+						</Button>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+			
+		</Border>
+	</Grid>
+</UserControl>

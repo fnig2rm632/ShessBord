@@ -1,0 +1,133 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ShessBord.ViewModels"
+             x:DataType="vm:AuthenticationViewModel"
+			 mc:Ignorable="d" 
+             Background="#262421"
+			 d:DesignWidth="800" 
+             x:Class="ShessBord.AuthenticationAndroidView">
+	
+	<!--MainPanel-->
+	<Grid 
+		Margin="20"
+		RowDefinitions="70,70,70,70,40,*,100,100">
+		
+		<!--ChangeLanguage-->
+		<Button 
+			Grid.Row="0" 
+			Height="50" 
+			Padding="0"
+			VerticalAlignment="Top" 
+			HorizontalAlignment="Right" >
+			<StackPanel Orientation="Horizontal">
+				<TextBlock FontWeight="600" Margin="0 0 5 0" VerticalAlignment="Center" Foreground="#9B9A99" Text="Language"/>
+				<Image Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Source="/Assets/icons8-земной-шар-100.png"/>
+			</StackPanel>
+			<Button.Styles>
+				<Style Selector="Button">
+					<Setter Property="Background" Value="Transparent"/>
+				</Style>
+				<Style Selector="Button:pointerover /template/ContentPresenter">
+					<Setter Property="Background" Value="Transparent"/>
+				</Style>
+				<Style Selector="Button:pressed /template/ContentPresenter">
+					<Setter Property="Background" Value="Transparent"/>
+				</Style>
+				<Style Selector="MenuFlyoutPresenter">
+					<Setter Property="Background" Value="#262421"/> 
+					<Setter Property="BorderBrush" Value="#9B9A99"/>
+					<Setter Property="BorderThickness" Value="2"/>
+				</Style>
+			</Button.Styles>
+			<Button.Flyout>
+				<MenuFlyout Placement="BottomEdgeAlignedRight">
+					<MenuItem HorizontalAlignment="Center" Width="110" Height="40" Header="Русский" Command="{Binding ChangeLanguageCommand}" Background="#262421" CommandParameter="ru-RU"/>
+					<MenuItem HorizontalAlignment="Center" Width="110" Height="40" Header="English" Command="{Binding ChangeLanguageCommand}" Background="#262421" CommandParameter="en-US"/>
+				</MenuFlyout>
+			</Button.Flyout>
+		</Button>
+		<!--ChangeLanguage-->
+
+		<!--TextMain-->
+		<TextBlock 
+			Grid.Row="1"
+			Classes="TextBlockAndroid"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Top"
+			Text="{Binding TextLogIn}"/>
+		<!--TextMain-->
+
+		<!--TextBoxLogin-->
+		<TextBox 
+			Classes="TextBoxMain TextBoxAndroid"
+			Watermark="{Binding TextWatermarkLogin}"
+			Grid.Row="2">
+			<TextBox.InnerLeftContent>
+				<StackPanel Height="30" Width="40">
+					<Image Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/icons8-человек-64.png"/>
+				</StackPanel>
+			</TextBox.InnerLeftContent>
+		</TextBox>
+		<!--TextBoxLogin-->
+		
+		<!--TextBoxPassword-->
+		<TextBox 
+			Classes="TextBoxMain TextBoxAndroid"
+			PasswordChar="{Binding PasswordChar}"
+			Watermark="{Binding TextWatermarkPassword}"
+			Grid.Row="3">
+			<TextBox.InnerLeftContent>
+				<StackPanel Height="30" Width="40">
+					<Image Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/icons8-замок-64 (1).png"/>
+				</StackPanel>
+			</TextBox.InnerLeftContent>
+			<TextBox.InnerRightContent>
+				<ToggleButton
+					Classes="ToggleButtonPasswordButton"
+					IsChecked="{Binding IsVisiblePassword}">
+					<Panel>
+						<Image Classes="Close" Height="26" Source="/Assets/icons8-спрятать-64.png"/>
+						<Image Classes="Open" Height="26" Source="/Assets/icons8-показать-64.png"/>
+					</Panel>
+				</ToggleButton>
+			</TextBox.InnerRightContent>
+		</TextBox>
+		<!--TextBoxPassword-->
+		
+		<!--ButtonForgotPassword-->
+		<Button 
+			Grid.Row="4" 
+			FontWeight="600"
+			FontSize="16"
+			Classes="ButtonTransparent"
+			HorizontalAlignment="Center">
+			<TextBlock 
+				Foreground="LightGray" 
+				HorizontalAlignment="Right"
+				Text="{Binding TextForgotPassword}"/>
+		</Button>
+		<!--ButtonForgotPassword-->
+		
+		<!--ButtonLogIn-->
+		<Button 
+			Grid.Row="6" 
+			Classes="ButtonMain">
+			<TextBlock 
+				Text="{Binding TextLogIn}"/>
+		</Button>
+		<!--ButtonLogIn-->
+		
+		<!--ButtonSingUp-->
+		<Button 
+			Grid.Row="7" 
+			VerticalAlignment="Top"
+			Classes="ButtonMain">
+			<TextBlock 
+				Text="{Binding TextSingUpButtonAndroid}"/>
+		</Button>
+		<!--ButtonSingUp-->
+	</Grid>
+	<!--MainPanel-->
+</UserControl>

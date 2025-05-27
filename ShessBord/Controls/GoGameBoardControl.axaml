@@ -1,0 +1,102 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:goBordControl="clr-namespace:ShessBord.Controls.GoBordControl"
+        xmlns:controls="clr-namespace:ShessBord.Controls">
+        
+    <!--Set Defaults-->
+    <Design.PreviewWith>
+            <controls:GoGameBoardControl />
+    </Design.PreviewWith>
+    <!--Set Defaults-->
+    
+    <!--GoGameBoardControl-->
+    <Style Selector="controls|GoGameBoardControl">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <!--Background image-->
+                    <Canvas x:Name="GridCanvas"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="#68c5f9"
+                            IsHitTestVisible="False" />
+                    <!--Background image-->
+                    
+                    <ItemsControl x:Name="Part_GoGameBoardPresenter"
+                                  x:DataType="controls:GoGameBoardControl"
+                                  ItemsSource="{TemplateBinding Cells}"
+                                  Width="{TemplateBinding Width}"
+                                  Height="{TemplateBinding Height}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                        
+                        <!--Items Control-->
+                        <ItemsControl.ItemTemplate>
+                           <DataTemplate x:DataType="goBordControl:CellBoard">
+                                <Button
+                                    Margin="0"
+                                    Padding="0"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Stretch" 
+                                    Command="{Binding Command}"
+                                    VerticalAlignment="Stretch">
+                                    <Grid>
+                                        <Ellipse 
+                                            Margin="1" 
+                                            Fill="{Binding BackGroundColor}"
+                                            HorizontalAlignment="Stretch" 
+                                            VerticalAlignment="Stretch"/>
+                                        
+                                        <Ellipse 
+                                            Margin="1.5" 
+                                            HorizontalAlignment="Stretch" 
+                                            VerticalAlignment="Stretch">
+                                            <Ellipse.Fill>
+                                                <LinearGradientBrush StartPoint="0%,0%"
+                                                                     EndPoint="100%,100%" >
+                                                    <LinearGradientBrush.GradientStops>
+                                                        <GradientStop Offset="{Binding FillCellIndex}" Color="{Binding FillCell}"/>
+                                                        <GradientStop Offset="{Binding FillCellIndexSecond}" Color="{Binding FillCellSecond}"/>
+                                                    </LinearGradientBrush.GradientStops>
+                                                </LinearGradientBrush>
+                                            </Ellipse.Fill>                   
+                                        </Ellipse>
+                                        <Panel>
+                                            <Ellipse 
+                                                IsVisible="{Binding IsVisibleCell}"
+                                                Margin="1" 
+                                                Opacity="0.6"
+                                                HorizontalAlignment="Stretch" 
+                                                VerticalAlignment="Stretch"/>      
+                                        </Panel>
+                                    </Grid>
+                                    <Button.Styles>
+                                        <Style>
+                                            <Style Selector="Button:pointerover > Grid  > Panel > Ellipse">
+                                                <Setter Property="Fill" Value="{Binding HoverColor}" />
+                                            </Style>
+                                            
+                                            <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                                                <Setter Property="Background" Value="Transparent" />
+                                            </Style>
+                                        </Style>
+                                    </Button.Styles>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <!--Items Control-->
+                        
+                        <!--Type Panel-->
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid  Margin="0" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <!--Type Panel-->
+                    </ItemsControl>
+                </Grid>
+            </ControlTemplate>  
+        </Setter>
+    </Style>
+    <!--GoGameBoardControl-->
+</Styles>

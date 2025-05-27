@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ShessBord.ViewModels" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+			 x:DataType="vm:RegistrationViewModel"
+			 mc:Ignorable="d" 
+			 Background="#302E2B"
+			 d:DesignWidth="800" 
+             x:Class="ShessBord.Views.Android.RegistrationAndroidView">
+	<Grid 
+		ColumnDefinitions="*,400,*" 
+		RowDefinitions="*,700,*" >
+		
+	</Grid>
+</UserControl>
