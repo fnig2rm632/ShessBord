@@ -20,7 +20,7 @@ public static class AppServices
         //HttpClient 
         services.AddHttpClient("DefaultClient", client => 
         {
-            client.BaseAddress = new Uri("http://localhost:5160/");
+            client.BaseAddress = new Uri("http://192.168.1.106:5160/");
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         });
