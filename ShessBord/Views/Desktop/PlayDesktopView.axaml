@@ -225,5 +225,32 @@
 			<!--ButtonPlayMyself-->
 		</Grid>
 		<!--PlayBlock-->
+		
+		<!--Load-->
+		<StackPanel 
+			IsVisible="{Binding IsLoading}"
+			Grid.Column="0"
+			Grid.ColumnSpan="2" 
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center">
+			<Border
+				CornerRadius="10"
+				Height="400"
+				Width="400"
+				Background="#262522">
+				<Grid RowDefinitions="*,*,*,*">
+					<TextBlock Grid.Row="0" 
+					           HorizontalAlignment="Center" 
+					           VerticalAlignment="Center" 
+					           FontSize="24" 
+					           Classes="TextBlockTitle" 
+					           Text="Загрузка"/>
+					<Button Command="{Binding CancalLoadCommand}" Classes="ButtonMain" Margin="30 0" Grid.Row="3">
+						<TextBlock Text="Пректатить"/>
+					</Button>
+				</Grid>
+			</Border>
+		</StackPanel>
+		<!--Load-->
 	</Grid>
 </UserControl>

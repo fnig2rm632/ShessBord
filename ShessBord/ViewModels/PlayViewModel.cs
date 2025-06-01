@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reactive;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
@@ -23,8 +24,7 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         private readonly IAppLocalizationService _localization;
         private readonly IServiceProvider _serviceProvider;
         private readonly IAppSettingsService _appSettingsService;
-        private readonly IAppMatchService _appMatchService;
-        private readonly IGameRules _gameRules;
+        private readonly IAppMatchmakingService _appMatchmakingService;
 
         #endregion
 
@@ -35,11 +35,13 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         public string UrlPathSegment { get; } = Guid.NewGuid().ToString().Substring(0,5);
         
         public ReactiveCommand<Unit,IRoutableViewModel> NextToAboutUsCommand { get; }
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToPlayCommand { get; }
+        public ReactiveCommand<Unit,Unit> NextToPlayCommand { get; }
+        
+        public ReactiveCommand<Unit,Unit> CancalLoadCommand { get; }
         public ReactiveCommand<Unit,IRoutableViewModel> NextToMenuCommand { get; }
         public ReactiveCommand<Unit,IRoutableViewModel> NextToFriendsCommand { get; }
         public ReactiveCommand<Unit,IRoutableViewModel> NextToSettingsCommand { get; }
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToMatchCommand { get; }
+        public ReactiveCommand<Unit,Unit> NextToMatchCommand { get; }
     
     #endregion
 
@@ -64,9 +66,17 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
 
     #region ChooseBoard
     
+    private bool _isLoading = false;
+
+    public bool IsLoading
+    {
+        get => _isLoading;
+        set => this.RaiseAndSetIfChanged(ref _isLoading, value);
+    }
+    
     public ReactiveCommand<string, Unit> SelectOptionCommand { get; }
 
-    public int SelectedBoardIndex { get; set; } = 9;
+    private int SelectedBoardIndex { get; set; } = 9;
     
     private Bitmap _bimapBoard = new Bitmap(@"Assets\mini.png");
     
@@ -122,15 +132,13 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         IAppLocalizationService localization,
         IServiceProvider serviceProvider,
         IAppSettingsService appSettingsService,
-        IAppMatchService appMatchService,
-        IGameRules gameRules)
+        IAppMatchmakingService appMatchmakingService)
     { 
         HostScreen = screen;
         _localization = localization;
         _serviceProvider = serviceProvider;
         _appSettingsService = appSettingsService;
-        _appMatchService = appMatchService;
-        _gameRules = gameRules;
+        _appMatchmakingService = appMatchmakingService;
 
         _localization.LanguageChanged.Subscribe(_ => UpdateLocalizedProperties());
         
@@ -146,24 +154,47 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         
         // NextTo
         NextToAboutUsCommand = ReactiveCommand.CreateFromObservable(NextToAboutUs);
-        NextToPlayCommand = ReactiveCommand.CreateFromObservable(NextToPlay);
+        NextToPlayCommand = ReactiveCommand.Create(NextToPlay);
         NextToMenuCommand = ReactiveCommand.CreateFromObservable(NextToMenu);
         NextToFriendsCommand= ReactiveCommand.CreateFromObservable(NextToFriends);
         NextToSettingsCommand  = ReactiveCommand.CreateFromObservable(NextToSettings);
-        NextToMatchCommand = ReactiveCommand.CreateFromObservable(NextToMatch);
+        NextToMatchCommand = ReactiveCommand.Create(NextToMatch);
+        CancalLoadCommand = ReactiveCommand.Create(CancelLoad);
 
     }
     
     //Открытие и закрытие панели
     private void OpenAndClosePanel() => IsHidePanel = !IsHidePanel;
+
+    private void CancelLoad()
+    {
+        IsLoading = false;
+        _appMatchmakingService.Cancel();
+
+    }
     
     // К Станице c Матчу
-    private IObservable<IRoutableViewModel> NextToMatch()
+    private async void NextToMatch()
     {
-        _appMatchService.StartNewGame(SelectedBoardIndex);
-        var settingsView = _serviceProvider.GetRequiredService<MatchViewModel>();
-        return HostScreen.Router.Navigate.Execute(settingsView);
+        IsLoading = true;
+        
+        var isOponent = await _appMatchmakingService.StartSearch("Bullet", 9);
+        while (IsLoading)
+        {
+            if (isOponent)
+            {
+                var settingsView = _serviceProvider.GetRequiredService<MatchViewModel>();
+                HostScreen.Router.Navigate.Execute(settingsView);
+                
+                IsLoading = false;
+            }
+            
+            await Task.Delay(2000);
+            
+            isOponent = await _appMatchmakingService.Search("Bullet", 9);
+        }
     }
+    
     
     // К Станице c настройками
     private IObservable<IRoutableViewModel> NextToSettings()
@@ -180,10 +211,10 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
     }
     
     // К Старанице Игра
-    private IObservable<IRoutableViewModel> NextToPlay()
+    private void NextToPlay()
     {
         var playView = _serviceProvider.GetRequiredService<PlayViewModel>();
-        return HostScreen.Router.Navigate.Execute(playView);
+        HostScreen.Router.Navigate.Execute(playView);
     }
     
     // К Станице main в меню
@@ -230,7 +261,7 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         int ii = i switch
         {
             "mini" => 9,
-            "norm" => 13,   
+            "norm" => 16,   
             "max" => 19,
             _ => throw new ArgumentOutOfRangeException(nameof(i), i, null)
         };

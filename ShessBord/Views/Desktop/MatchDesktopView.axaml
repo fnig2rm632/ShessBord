@@ -24,20 +24,34 @@
 			VerticalAlignment="Center"
 			IsConfirmationMode="False"
 			IsLineSelection="False"
-			SelectedSide="{Binding CurrentPlayer}"
+			SelectedSide="{Binding}"
 			SizeBoard="{Binding Size}"
 			Width="800"
 			Height="800"/>
 		
 		<Border Grid.Column="1" Margin="40 0 0 0" Background="#262522" CornerRadius="10" Height="800" Width="400" >
 			<StackPanel Margin="20">
-				<TextBlock Text="{Binding GameStatus}"/>
+				<TextBlock Text="{Binding }"/>
 				<Border 
-					CornerRadius="10"
-					Background="Gray">
+					CornerRadius="10">
 					<StackPanel>
-						<Button Classes="ButtonMain" Command="{Binding NextToMenuCommand}" VerticalAlignment="Bottom">
-							<TextBlock> Выйти</TextBlock>
+						<!--<ListBox Margin="0 50 0 0" Height="500" HorizontalAlignment="Stretch" ItemsSource="{Binding Moves}">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<Border Margin="0 5" HorizontalAlignment="Stretch" Height="30" CornerRadius="10"  Background="#3A3D41">
+										<Grid ColumnDefinitions="*,*">
+											<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Text="{Binding Side}"/>
+											<TextBlock Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Text="{Binding Place}"/>
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>-->
+						<Button Margin="0 20" Classes="ButtonMenu" Command="{Binding PassCommand}" >
+							<TextBlock>Пропуск хода</TextBlock>
+						</Button>
+						<Button Classes="ButtonMain" Command="{Binding NextToMenuCommand}" >
+							<TextBlock>Сдаться</TextBlock>
 						</Button>
 					</StackPanel>
 				</Border>

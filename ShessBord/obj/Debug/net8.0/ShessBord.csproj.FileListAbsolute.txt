@@ -20,5 +20,6 @@ C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ShessBord.Resou
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.ru-RU.resources
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.dll
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ShessBord.sourcelink.json
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.cs
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.cs

@@ -88,3 +88,5 @@ C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\Microso
 C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.sourcelink.json
+C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\Newtonsoft.Json.dll

@@ -87,6 +87,16 @@
               "version": "[9.0.3, )",
               "versionCentrallyManaged": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "System.Net.WebSockets.Client": {
+              "target": "Package",
+              "version": "[4.3.2, )",
+              "versionCentrallyManaged": true
+            },
             "System.Security.Cryptography.ProtectedData": {
               "target": "Package",
               "version": "[9.0.3, )",
@@ -105,6 +115,8 @@
             "Avalonia.Themes.Fluent": "11.2.2",
             "Microsoft.Extensions.DependencyInjection": "9.0.3",
             "Microsoft.Extensions.Http": "9.0.3",
+            "Newtonsoft.Json": "13.0.3",
+            "System.Net.WebSockets.Client": "4.3.2",
             "System.Security.Cryptography.ProtectedData": "9.0.3",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.1"
           },

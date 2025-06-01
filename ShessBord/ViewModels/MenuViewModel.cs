@@ -167,6 +167,8 @@ public class MenuViewModel : ViewModelBase, IRoutableViewModel
         {
             _localization.SetLanguage(code); 
         });
+        
+        
 
         HidePanelCommand = ReactiveCommand.Create(OpenAndClosePanel);
         IsHidePanel = _appSettingsService.IsSidePanelOpen;

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using ReactiveUI;
 using ShessBord.Clients;
 using ShessBord.Interfaces;
@@ -54,6 +56,29 @@ public static class AppServices
             var httpClient = factory.CreateClient("DefaultClient");
             return new FriendApiClient(httpClient);
         });
+        
+        // ApiMatchmaking
+        services.AddTransient<IMatchmakingApiClient, MatchmakingApiClient>(sp =>
+        {
+            var factory = sp.GetRequiredService<IHttpClientFactory>();
+            var httpClient = factory.CreateClient("DefaultClient");
+            return new MatchmakingApiClient(httpClient);
+        });
+        
+        // ApiWebSocket
+        services.AddTransient<IGameClient>(sp =>
+        {
+            // Получаем конфигурацию (appsettings.json)
+            var configuration = sp.GetRequiredService<IConfiguration>();
+    
+            // Извлекаем URL сервера и ID игрока
+            string serverUrl = configuration["GameServer:Url"] ?? throw new InvalidOperationException("GameServer:Url not configured");
+    
+            Guid playerId = Guid.Parse(configuration["GameServer:PlayerId"] ?? throw new InvalidOperationException("GameServer:PlayerId not configured"));
+
+            // Создаем и возвращаем клиент
+            return new GameClient(serverUrl, playerId);
+        });
 
         // ViewModels
         services.AddSingleton<IScreen>(x => x.GetRequiredService<MainWindowViewModel>());
@@ -81,7 +106,8 @@ public static class AppServices
         services.AddSingleton<IAppFriendService, AppFriendService>();
         services.AddSingleton<IAppSettingsService, AppSettingsService>();
         services.AddSingleton<IAppMatchService, AppMatchService>();
-        services.AddSingleton<IGameRules, GameRules>();
+        services.AddSingleton<IAppMatchmakingService, AppMatchmakingService>();
+        services.AddSingleton<IGameWebSocketService, GameWebSocketService>();
         
         return services.BuildServiceProvider();
     }

@@ -11,6 +11,7 @@ using ReactiveUI;
 using ShessBord.Controls;
 using ShessBord.Controls.GoBordControl;
 using ShessBord.Interfaces;
+using ShessBord.Models;
 using ShessBord.Services;
 
 namespace ShessBord.ViewModels;
@@ -22,9 +23,12 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
     #region Dependency Injection
     
         private readonly IAppLocalizationService _localization;
+        private readonly IAppTokenStorage _tokenStorage;
         private readonly IServiceProvider _serviceProvider;
         private readonly IAppSettingsService _appSettingsService;
-        private readonly IDisposable _stateSubscription;
+        private readonly IGameWebSocketService _gameWebSocketService;
+        private readonly IAppMatchmakingService _appMatchmakingService;
+        private readonly IMatchmakingApiClient _matchmakingApiClient;
 
         #endregion
 
@@ -110,6 +114,7 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
 
     #region Match
 
+    
     private bool _isGameActive;
 
     private GoGameBoardControl.BoardSize _size = GoGameBoardControl.BoardSize.Mini;
@@ -120,6 +125,8 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         set => this.RaiseAndSetIfChanged(ref _size, value);
     }
     
+    
+    
     private ObservableCollection<CellBoard> _cells = new ObservableCollection<CellBoard>();
     public ObservableCollection<CellBoard> Cells
     {
@@ -128,21 +135,26 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
     } 
     
     public ReactiveCommand<CellPlace, Unit> MovedCommand { get; }
+    
 
     #endregion
 
     public MatchViewModel(
         IScreen screen,
         IAppLocalizationService localization,
+        IAppTokenStorage tokenStorage,
         IServiceProvider serviceProvider,
         IAppSettingsService appSettingsService,
-        IAppMatchService appMatchService)
+        IGameWebSocketService gameWebSocketService,
+        IAppMatchmakingService appMatchmakingService)
     {
-        _appMatchService = appMatchService;
         HostScreen = screen;
         _localization = localization;
+        _tokenStorage = tokenStorage;
         _serviceProvider = serviceProvider;
         _appSettingsService = appSettingsService;
+        _gameWebSocketService = gameWebSocketService;
+        _appMatchmakingService = appMatchmakingService;
 
         _localization.LanguageChanged.Subscribe(_ => UpdateLocalizedProperties());
         
@@ -152,9 +164,10 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         });
 
         // Match
-        appMatchService.BoardUpdated.Subscribe(_ => UpdateBoard());
+        _appMatchmakingService.Start();
+        
         MovedCommand = ReactiveCommand.Create<CellPlace>(move => Moved(move));
-        ExecuteStartNewGame(19);
+        PassCommand = ReactiveCommand.Create(ExecutePass);
         
         
         // Panel
@@ -162,24 +175,13 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         IsHidePanel = _appSettingsService.IsSidePanelOpen;
         
         // NextTo
-        NextToAboutUsCommand = ReactiveCommand.CreateFromObservable(NextToAboutUs);
-        NextToPlayCommand = ReactiveCommand.CreateFromObservable(NextToPlay);
         NextToMenuCommand = ReactiveCommand.CreateFromObservable(NextToMenu);
-        NextToFriendsCommand= ReactiveCommand.CreateFromObservable(NextToFriends);
         NextToSettingsCommand  = ReactiveCommand.CreateFromObservable(NextToSettings);
         
     }
     
-    // Текущий игрок
-        public GoGameBoardControl.SelectedSideType CurrentPlayer => 
-            _appMatchService.CurrentPlayer == StoneColor.Black ? 
-                GoGameBoardControl.SelectedSideType.Black : 
-                GoGameBoardControl.SelectedSideType.White;
         
-        // Статус игры
-        public string GameStatus => _isGameActive ? 
-            $"Ход: {CurrentPlayer}" : 
-            "Игра не начата";
+  
         
         // Команды
         public ReactiveCommand<CellPlace, Unit> MakeMoveCommand { get; }
@@ -191,27 +193,15 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         {
             if (!_isGameActive) return;
             
-            if (_appMatchService.MakeMove(move.Column, move.Row))
-            {
-                UpdateBoard();
-            }
         }
         
         // Начало новой игры
-        private void ExecuteStartNewGame(int boardSize)
+        private void ExecuteStartNewGame()
         {
-            Size = boardSize switch
-            {
-                9 => GoGameBoardControl.BoardSize.Mini,
-                13 => GoGameBoardControl.BoardSize.Norm,
-                19 => GoGameBoardControl.BoardSize.Max,
-                _ => GoGameBoardControl.BoardSize.Mini,
-            };
             
-            _appMatchService.StartNewGame(boardSize);
             _isGameActive = true;
-            InitializeCells(boardSize);
-            this.RaisePropertyChanged(nameof(GameStatus));
+            InitializeCells();
+           
         }
         
         // Пас (пропуск хода)
@@ -219,13 +209,12 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         {
             if (!_isGameActive) return;
             
-            _appMatchService.MakeMove(-1, -1); // Специальные координаты для паса
-            this.RaisePropertyChanged(nameof(CurrentPlayer));
-            this.RaisePropertyChanged(nameof(GameStatus));
+            Console.WriteLine("Пас");
+            
         }
         
         // Инициализация клеток доски
-        private void InitializeCells(int boardSize)
+        private void InitializeCells()
         {
             Cells.Clear();
 
@@ -235,39 +224,22 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         // Обновление состояния доски
         private void UpdateBoard()
         {
-            // Обновляем состояние каждой клетки
-            for (int i = 0; i < Cells.Count; i++)
-            {
-                var cell = Cells[i];
-                var stone = _appMatchService.CurrentBoard[cell.Column, cell.Row];
-                
-                cell.Status = stone?.Color == StoneColor.Black ? 'b' : 
-                             stone?.Color == StoneColor.White ? 'w' : 
-                             null;
-                
-                cell.SideType = CurrentPlayer;
-            }
             
-            // Обновляем свойства
-            this.RaisePropertyChanged(nameof(CurrentPlayer));
-            this.RaisePropertyChanged(nameof(GameStatus));
-            
-            // Проверка окончания игры
-            if (_appMatchService.GameResult != null)
-            {
-                _isGameActive = false;
-                // Можно показать результат игры
-                Console.WriteLine($"Игра окончена! Результат: {_appMatchService.GameResult}");
-            }
-            
-            NextToMenuCommand = ReactiveCommand.CreateFromObservable(NextToMenu);
         }
  
     //Сдвинулась пешка
     private void Moved(CellPlace move)
     {
         Console.WriteLine(move.Column + " "+ move.Row);
-        ExecuteMakeMove(move);
+        
+        var Hod = new GameMove
+        {
+            IdPlayer = Guid.Parse(_tokenStorage.GetTokens().userId),
+            X = move.Column,
+            Y = move.Row,
+        };
+
+        _gameWebSocketService.SendMoveAsync(Hod).ConfigureAwait(false);
     }
     
     //Открытие и закрытие панели
@@ -280,32 +252,11 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         return HostScreen.Router.Navigate.Execute(settingsView);
     }
     
-    // К Станице о нас
-    private IObservable<IRoutableViewModel> NextToAboutUs()
-    {
-        var aboutUsView = _serviceProvider.GetRequiredService<AboutUsViewModel>();
-        return HostScreen.Router.Navigate.Execute(aboutUsView);
-    }
-    
-    // К Старанице Игра
-    private IObservable<IRoutableViewModel> NextToPlay()
-    {
-        var playView = _serviceProvider.GetRequiredService<PlayViewModel>();
-        return HostScreen.Router.Navigate.Execute(playView);
-    }
-    
     // К Станице main в меню
     private IObservable<IRoutableViewModel> NextToMenu()
     {
         var menuView = _serviceProvider.GetRequiredService<MenuViewModel>();
         return HostScreen.Router.Navigate.Execute(menuView);
-    }
-    
-    // К Станице с друзьями
-    private IObservable<IRoutableViewModel> NextToFriends()
-    {
-        var friendsView = _serviceProvider.GetRequiredService<FriendsViewModel>();
-        return HostScreen.Router.Navigate.Execute(friendsView);
     }
     
     // Поискт обновляймых string полей
