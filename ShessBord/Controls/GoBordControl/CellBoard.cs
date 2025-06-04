@@ -1,4 +1,7 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using Avalonia.Media;
 
 namespace ShessBord.Controls.GoBordControl;
@@ -9,12 +12,18 @@ public class CellBoard(
     ICommand command,
     GoGameBoardControl.SelectedSideType sideType,
     char? status = null,
-    ThemeBoard? themeBoard = null)
+    ThemeBoard? themeBoard = null) : INotifyPropertyChanged
 {
     public int Column { get; } = column;
     public int Row { get; } = row;
     public ICommand Command { get; } = command;
-    public char? Status {get; set; } = status;
+    private char? _status;
+    public char? Status
+    {
+        get => _status;
+        set => SetField(ref _status, value);
+    }
+    
     public ThemeBoard? Theme {get; set; } = themeBoard;
     private ThemeCell ThemeCell => ChoseTheme(Status);
     public Color FillCell => Status != null ? ThemeCell.MainColor : Colors.Transparent;
@@ -33,5 +42,15 @@ public class CellBoard(
         'b' => new ThemeCell(0, Colors.White, 1, Colors.Black),
         _ => new ThemeCell((decimal)0.1, Colors.OrangeRed, 1, Colors.Red)
     };
+    
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+        field = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        return true;
+    }
     
 }

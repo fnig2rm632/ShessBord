@@ -23,3 +23,53 @@ C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ShessBord.sourcelink.json
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.cs
 C:\Users\Gamov\source\repos\ShessBord\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.cs
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\bin\Debug\net8.0\ShessBord.deps.json
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\bin\Debug\net8.0\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\bin\Debug\net8.0\ShessBord.pdb
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\bin\Debug\net8.0\en-US\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\bin\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.csproj.AssemblyReference.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\Avalonia\Resources.Inputs.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\Avalonia\resources
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.resources
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.en-US.resources
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.ru-RU.resources
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.csproj.GenerateResource.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.AssemblyInfoInputs.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.AssemblyInfo.cs
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.csproj.CoreCompileInputs.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ShessBord.sourcelink.json
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\Avalonia\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\Avalonia\ShessBord.pdb
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\refint\Avalonia\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.cs
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.cs
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord\obj\Debug\net8.0\ref\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\bin\Debug\net8.0\ShessBord.deps.json
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\bin\Debug\net8.0\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\bin\Debug\net8.0\ShessBord.pdb
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\bin\Debug\net8.0\en-US\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\bin\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.csproj.AssemblyReference.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\Avalonia\Resources.Inputs.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\Avalonia\resources
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.resources
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.en-US.resources
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.Resources.Strings.ru-RU.resources
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.csproj.GenerateResource.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.AssemblyInfoInputs.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.AssemblyInfo.cs
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.csproj.CoreCompileInputs.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ShessBord.sourcelink.json
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\Avalonia\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\Avalonia\ShessBord.pdb
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\refint\Avalonia\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.cs
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\en-US\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.cs
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\obj\Debug\net8.0\ref\ShessBord.dll

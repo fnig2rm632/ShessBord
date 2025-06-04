@@ -90,3 +90,187 @@ C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\System.
 C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.sourcelink.json
 C:\Users\Gamov\source\repos\ShessBord\ShessBord.Desktop\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.exe
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.deps.json
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.runtimeconfig.json
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.pdb
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Base.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Controls.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.DesignerSupport.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Dialogs.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Markup.Xaml.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Markup.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Metal.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.MicroCom.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.OpenGL.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Vulkan.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Controls.ColorPicker.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Controls.DataGrid.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Diagnostics.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Fonts.Inter.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.FreeDesktop.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Native.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.ReactiveUI.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Remote.Protocol.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Skia.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Themes.Fluent.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Themes.Simple.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Win32.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.X11.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\DynamicData.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\HarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\MicroCom.Runtime.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ReactiveUI.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\SkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Splat.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\System.Reactive.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\Tmds.DBus.Protocol.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-arm64\native\av_libglesv2.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x64\native\av_libglesv2.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x86\native\av_libglesv2.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\osx\native\libAvaloniaNative.dylib
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.pdb
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\en-US\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\bin\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.csproj.AssemblyReference.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\Avalonia\Resources.Inputs.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.AssemblyInfoInputs.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.AssemblyInfo.cs
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.csproj.CoreCompileInputs.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.sourcelink.json
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBor.C7AD8EFE.Up2Date
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\refint\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.pdb
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.genruntimeconfig.cache
+C:\Users\Gamov\source\repos\ShessBord — копия\ShessBord.Desktop\obj\Debug\net8.0\ref\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.exe
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.deps.json
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.runtimeconfig.json
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.Desktop.pdb
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Base.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Controls.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.DesignerSupport.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Dialogs.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Markup.Xaml.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Markup.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Metal.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.MicroCom.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.OpenGL.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Vulkan.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Controls.ColorPicker.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Controls.DataGrid.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Diagnostics.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Fonts.Inter.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.FreeDesktop.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Native.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.ReactiveUI.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Remote.Protocol.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Skia.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Themes.Fluent.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Themes.Simple.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.Win32.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Avalonia.X11.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\DynamicData.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\HarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\MicroCom.Runtime.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ReactiveUI.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\SkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Splat.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\System.Reactive.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\Tmds.DBus.Protocol.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-arm64\native\av_libglesv2.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x64\native\av_libglesv2.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x86\native\av_libglesv2.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\osx\native\libAvaloniaNative.dylib
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ShessBord.pdb
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\en-US\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\bin\Debug\net8.0\ru-RU\ShessBord.resources.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.csproj.AssemblyReference.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\Avalonia\Resources.Inputs.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.AssemblyInfoInputs.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.AssemblyInfo.cs
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.csproj.CoreCompileInputs.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.sourcelink.json
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBor.C7AD8EFE.Up2Date
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\refint\ShessBord.Desktop.dll
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.pdb
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ShessBord.Desktop.genruntimeconfig.cache
+C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord.Desktop\obj\Debug\net8.0\ref\ShessBord.Desktop.dll

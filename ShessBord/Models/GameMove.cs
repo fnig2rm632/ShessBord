@@ -31,7 +31,7 @@ public class GameMove
     public Guid IdPlayer { get; set; }
     
     
-    public Guid IdGame { get; set; }
+    public int IdGame { get; set; }
 
     /// <summary>
     /// Дополнительные данные (например, комментарий к ходу)
@@ -54,7 +54,7 @@ public class GameMove
     /// <summary>
     /// Создает ход с размещением камня
     /// </summary>
-    public static GameMove CreatePlaceMove(int x, int y, StoneColor color, Guid idPlayer, Guid idGame)
+    public static GameMove CreatePlaceMove(int x, int y, StoneColor color, Guid idPlayer, int idGame)
     {
         return new GameMove
         {

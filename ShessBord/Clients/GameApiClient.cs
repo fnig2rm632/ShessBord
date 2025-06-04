@@ -22,4 +22,10 @@ public class GameApiClient : ApiClientBase, IGameApiClient
     {
         return await GetAsync<ServiceResponse<List<GameResponseDto>>>($"all{userId}",null!,accessToken);
     }
+    
+    public async Task<GameResponseDto> PostStartedGame(GameResponseDto? item,string accessToken)
+    {
+        var tmp =  await PostAsync<GameResponseDto>("game",item,accessToken);
+        return tmp;
+    }
 }

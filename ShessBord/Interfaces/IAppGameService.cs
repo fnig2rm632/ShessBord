@@ -8,4 +8,5 @@ namespace ShessBord.Interfaces;
 public interface IAppGameService
 {
     Task<ServiceResponse<List<GameResponseDto>>> GetUserProfileAsync();
+    Task<GameResponseDto> PostStartedGameAsync();
 }

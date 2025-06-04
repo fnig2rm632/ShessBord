@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj": {}
+    "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj": {
+    "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj",
+        "projectUniqueName": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj",
         "projectName": "ShessBord",
-        "projectPath": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj",
+        "projectPath": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj",
         "packagesPath": "C:\\Users\\Gamov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\obj\\",
+        "outputPath": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [

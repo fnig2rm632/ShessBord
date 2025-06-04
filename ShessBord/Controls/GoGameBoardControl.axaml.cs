@@ -25,7 +25,22 @@ public class GoGameBoardControl : TemplatedControl
     private static Canvas? _gridCanvas;
     private List<Control>? _controls;
     private UniformGrid? _uniformGrid;
+    
+    #region Changitem
 
+    /// <summary> Defines the <see cref="IsLineSelection"/> propertty </summary>
+    public static readonly StyledProperty<bool> IsChangeItemProperty =
+        AvaloniaProperty.Register<GoGameBoardControl,
+            bool>(nameof(IsChangeItem), defaultValue: true);
+
+    /// <summary> Gets or sets the show line. </summary>
+    public bool IsChangeItem
+    {
+        get { return GetValue(IsChangeItemProperty); }
+        set { SetValue(IsChangeItemProperty, value); }
+    }
+
+    #endregion
 
     #region ChosenSell
 
@@ -294,6 +309,11 @@ public class GoGameBoardControl : TemplatedControl
 
             InitializeCells();
         }
+
+        if (change.Property.Name == nameof(IsChangeItem))
+        {
+            InitializeCells();
+        }
         
 
         if (change.Property.Name == nameof(SizeBoard))
@@ -308,7 +328,6 @@ public class GoGameBoardControl : TemplatedControl
                 _chosenSell = new CellPlace(-1, -1);
             }
 
-            Console.WriteLine($@"Selected {_chosenSell.Column} to {_chosenSell.Row}");
             InitializeCanvas();
         }
 

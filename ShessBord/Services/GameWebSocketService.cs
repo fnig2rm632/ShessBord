@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 public class GameWebSocketService : IGameWebSocketService, IDisposable
 {
-    private readonly string _serverUrl = "ws://localhost:5160";
+    private readonly string _serverUrl = "ws://192.168.1.106:5160";
     private ClientWebSocket _webSocket;
     private readonly Subject<GameStatus> _gameUpdates = new();
     private CancellationTokenSource _cts;
@@ -43,12 +43,21 @@ public class GameWebSocketService : IGameWebSocketService, IDisposable
         
         var json = JsonConvert.SerializeObject(move);
         var buffer = Encoding.UTF8.GetBytes(json);
-        await _webSocket.SendAsync(
-            new ArraySegment<byte>(buffer),
-            WebSocketMessageType.Text,
-            true,
-            _cts.Token
-        );
+        Console.WriteLine($"Received JSON: {json}");
+
+        try
+        {
+            await _webSocket.SendAsync(
+                new ArraySegment<byte>(buffer),
+                WebSocketMessageType.Text,
+                true,
+                _cts.Token
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 
     private async Task ReceiveMessagesAsync()

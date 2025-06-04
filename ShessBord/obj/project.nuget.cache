@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2g6YCk9uxS0=",
+  "dgSpecHash": "zJrh5SMzbmk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj",
+  "projectFilePath": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gamov\\.nuget\\packages\\avalonia\\11.2.2\\avalonia.11.2.2.nupkg.sha512",
     "C:\\Users\\Gamov\\.nuget\\packages\\avalonia.buildservices\\0.0.29\\avalonia.buildservices.0.0.29.nupkg.sha512",

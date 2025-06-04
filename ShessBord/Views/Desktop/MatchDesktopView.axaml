@@ -19,12 +19,12 @@
 		<controls:GoGameBoardControl
 			Grid.Column="0"
 			MoveMadeCommand="{Binding MovedCommand}"
-			Cells="{Binding Cells}"
+			Cells="{Binding Cells, Mode=TwoWay}"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Center"
 			IsConfirmationMode="False"
 			IsLineSelection="False"
-			SelectedSide="{Binding}"
+			SelectedSide="White"
 			SizeBoard="{Binding Size}"
 			Width="800"
 			Height="800"/>
@@ -50,7 +50,7 @@
 						<Button Margin="0 20" Classes="ButtonMenu" Command="{Binding PassCommand}" >
 							<TextBlock>Пропуск хода</TextBlock>
 						</Button>
-						<Button Classes="ButtonMain" Command="{Binding NextToMenuCommand}" >
+						<Button Classes="ButtonMain" Command="{Binding OpenCloseDialogViewCommand}" >
 							<TextBlock>Сдаться</TextBlock>
 						</Button>
 					</StackPanel>
@@ -58,5 +58,33 @@
 			</StackPanel>
 			
 		</Border>
+		<!--Load-->
+		<Grid 
+			IsVisible="{Binding IsLoading}"
+			Grid.Column="0"
+			Grid.ColumnSpan="2" 
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch"
+			Background="Transparent">
+			<Border
+				CornerRadius="10"
+				Height="200"
+				Width="400"
+				Background="#262522"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center">
+				<Grid RowDefinitions="*,*">
+					<TextBlock Grid.Row="0" 
+					           HorizontalAlignment="Center" 
+					           VerticalAlignment="Center" 
+					           FontSize="24" 
+					           Classes="TextBlockTitle" 
+					           Text="{Binding Result}"/>
+					<Button Command="{Binding NextToMenuCommand}" Classes="ButtonMain" Margin="30 0" Grid.Row="1">
+						<TextBlock Text="Выйти"/>
+					</Button>
+				</Grid>
+			</Border>
+		</Grid>
 	</Grid>
 </UserControl>

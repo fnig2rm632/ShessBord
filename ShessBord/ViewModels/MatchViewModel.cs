@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Avalonia.Media.Imaging;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,13 +13,11 @@ using ShessBord.Controls;
 using ShessBord.Controls.GoBordControl;
 using ShessBord.Interfaces;
 using ShessBord.Models;
-using ShessBord.Services;
 
 namespace ShessBord.ViewModels;
 
 public class MatchViewModel : ViewModelBase, IRoutableViewModel
 {
-    private readonly IAppMatchService _appMatchService;
 
     #region Dependency Injection
     
@@ -28,21 +27,15 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         private readonly IAppSettingsService _appSettingsService;
         private readonly IGameWebSocketService _gameWebSocketService;
         private readonly IAppMatchmakingService _appMatchmakingService;
-        private readonly IMatchmakingApiClient _matchmakingApiClient;
+        private readonly IAppGameService _appGameService;
 
         #endregion
 
     #region Routing
     
-        public IScreen HostScreen { get; }
-    
         public string UrlPathSegment { get; } = Guid.NewGuid().ToString().Substring(0,5);
-        
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToAboutUsCommand { get; }
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToPlayCommand { get; }
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToMenuCommand { get; set; }
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToFriendsCommand { get; }
-        public ReactiveCommand<Unit,IRoutableViewModel> NextToSettingsCommand { get; }
+        public IScreen HostScreen { get; }
+        public ReactiveCommand<Unit,IRoutableViewModel> NextToMenuCommand { get; }
     
     #endregion
 
@@ -114,29 +107,70 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
 
     #region Match
 
+        public ReactiveCommand<Unit, Unit> PassCommand { get; }
+        
+        public ReactiveCommand<Unit, Unit> OpenCloseDialogViewCommand { get; }
+        public ReactiveCommand<CellPlace, Unit> MovedCommand { get; }
+        
+        private GoGameBoardControl.BoardSize _size = GoGameBoardControl.BoardSize.Mini;
+        public GoGameBoardControl.BoardSize Size
+        {
+            get => _size;
+            set => this.RaiseAndSetIfChanged(ref _size, value);
+        }
+        
+        
+        private ObservableCollection<CellBoard> _cells = new();
+        public ObservableCollection<CellBoard> Cells
+        {
+            get => _cells;
+            set => this.RaiseAndSetIfChanged(ref _cells, value);
+            
+        } 
     
-    private bool _isGameActive;
+        private GameStatus _gameStatus;
+        public GameStatus GameStatus
+        {
+            get => _gameStatus;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _gameStatus, value);
+                
+                Cells = ConvertMatrixToSell(value.FieldMatrix);
+                
+                if (value.WinPlayer == value.Player1Id || value.WinPlayer == value.Player2Id)
+                {
+                    FinishGame(value.WinPlayer.ToString() == _tokenStorage.GetTokens().userId);
+                }
+            }
+        }
 
-    private GoGameBoardControl.BoardSize _size = GoGameBoardControl.BoardSize.Mini;
+        private void FinishGame(bool isWin)
+        {
+            IsLoading = true;
+            Result = isWin ? "Победа" : "Поражение";
+            _gameWebSocketService.DisconnectAsync();
+        }
+        
 
-    public GoGameBoardControl.BoardSize Size
-    {
-        get => _size;
-        set => this.RaiseAndSetIfChanged(ref _size, value);
-    }
-    
-    
-    
-    private ObservableCollection<CellBoard> _cells = new ObservableCollection<CellBoard>();
-    public ObservableCollection<CellBoard> Cells
-    {
-        get => _cells;
-        set => this.RaiseAndSetIfChanged(ref _cells, value);
-    } 
-    
-    public ReactiveCommand<CellPlace, Unit> MovedCommand { get; }
-    
+        private bool _isLoading;
 
+        public bool IsLoading
+        {
+            get => _isLoading;
+            set => this.RaiseAndSetIfChanged(ref _isLoading, value);
+        }
+
+        private string _result = "";
+
+        public string Result
+        {
+            get => _result;
+            set => this.RaiseAndSetIfChanged(ref _result, value);
+        }
+        
+        public int IdGame { get; set; }
+    
     #endregion
 
     public MatchViewModel(
@@ -146,7 +180,8 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         IServiceProvider serviceProvider,
         IAppSettingsService appSettingsService,
         IGameWebSocketService gameWebSocketService,
-        IAppMatchmakingService appMatchmakingService)
+        IAppMatchmakingService appMatchmakingService,
+        IAppGameService appGameService)
     {
         HostScreen = screen;
         _localization = localization;
@@ -155,8 +190,11 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         _appSettingsService = appSettingsService;
         _gameWebSocketService = gameWebSocketService;
         _appMatchmakingService = appMatchmakingService;
+        _appGameService = appGameService;
 
         _localization.LanguageChanged.Subscribe(_ => UpdateLocalizedProperties());
+        
+        _ = StartGame();
         
         ChangeLanguageCommand = ReactiveCommand.Create<string>(code => 
         {
@@ -164,93 +202,84 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         });
 
         // Match
-        _appMatchmakingService.Start();
-        
         MovedCommand = ReactiveCommand.Create<CellPlace>(move => Moved(move));
         PassCommand = ReactiveCommand.Create(ExecutePass);
+        OpenCloseDialogViewCommand = ReactiveCommand.Create(Resign);
+
+        _gameWebSocketService.ConnectAsync(Guid.Parse(_tokenStorage.GetTokens().userId));
         
+        _gameWebSocketService.GameUpdates
+            .ObserveOn(RxApp.MainThreadScheduler) // UI-поток
+            .Subscribe(
+                status =>
+                {
+                    GameStatus = status; // триггерит UI
+                },
+                error =>
+                {
+                    Console.WriteLine(error);
+                }
+            );
         
         // Panel
-        HidePanelCommand = ReactiveCommand.Create(OpenAndClosePanel);
         IsHidePanel = _appSettingsService.IsSidePanelOpen;
         
         // NextTo
         NextToMenuCommand = ReactiveCommand.CreateFromObservable(NextToMenu);
-        NextToSettingsCommand  = ReactiveCommand.CreateFromObservable(NextToSettings);
-        
     }
     
-        
-  
-        
-        // Команды
-        public ReactiveCommand<CellPlace, Unit> MakeMoveCommand { get; }
-        public ReactiveCommand<int, Unit> StartNewGameCommand { get; }
-        public ReactiveCommand<Unit, Unit> PassCommand { get; }
-        
-        // Обработка хода
-        private void ExecuteMakeMove(CellPlace move)
+    private async Task StartGame()
+    {
+        var newGame = await _appGameService.PostStartedGameAsync();
+        IdGame = newGame.Id;
+    }
+    
+    private void OpenCloseDialogView()
+    {
+        IsLoading = true;
+    }
+       
+    // Пас (пропуск хода)
+    private void ExecutePass()
+    {
+        var stone = new GameMove
         {
-            if (!_isGameActive) return;
-            
-        }
-        
-        // Начало новой игры
-        private void ExecuteStartNewGame()
-        {
-            
-            _isGameActive = true;
-            InitializeCells();
-           
-        }
-        
-        // Пас (пропуск хода)
-        private void ExecutePass()
-        {
-            if (!_isGameActive) return;
-            
-            Console.WriteLine("Пас");
-            
-        }
-        
-        // Инициализация клеток доски
-        private void InitializeCells()
-        {
-            Cells.Clear();
+            IdPlayer = Guid.Parse(_tokenStorage.GetTokens().userId),
+            IdGame = IdGame,
+            Type = GameMove.MoveType.Pass
+        };
 
-            Cells = new();
-        }
-        
-        // Обновление состояния доски
-        private void UpdateBoard()
-        {
-            
-        }
- 
-    //Сдвинулась пешка
+        _gameWebSocketService.SendMoveAsync(stone).ConfigureAwait(false);
+    }
+
+    
+    //Сдвинулась пешку
     private void Moved(CellPlace move)
     {
-        Console.WriteLine(move.Column + " "+ move.Row);
-        
-        var Hod = new GameMove
+        var stone = new GameMove
         {
             IdPlayer = Guid.Parse(_tokenStorage.GetTokens().userId),
             X = move.Column,
             Y = move.Row,
+            IdGame = IdGame,
+            Type = GameMove.MoveType.PlaceStone
         };
 
-        _gameWebSocketService.SendMoveAsync(Hod).ConfigureAwait(false);
+        _gameWebSocketService.SendMoveAsync(stone).ConfigureAwait(false);
     }
     
-    //Открытие и закрытие панели
-    private void OpenAndClosePanel() => IsHidePanel = !IsHidePanel;
-    
-    // К Станице c настройками
-    private IObservable<IRoutableViewModel> NextToSettings()
+    // Сдаться
+    private void Resign()
     {
-        var settingsView = _serviceProvider.GetRequiredService<SettingsViewModel>();
-        return HostScreen.Router.Navigate.Execute(settingsView);
-    }
+        var stone = new GameMove
+        {
+            IdPlayer = Guid.Parse(_tokenStorage.GetTokens().userId),
+            IdGame = IdGame,
+            Type = GameMove.MoveType.Resign
+        };
+
+        _gameWebSocketService.SendMoveAsync(stone).ConfigureAwait(false);
+    } 
     
     // К Станице main в меню
     private IObservable<IRoutableViewModel> NextToMenu()
@@ -269,5 +298,32 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         {
             this.RaisePropertyChanged(prop.Name);
         }
+    }
+    
+    // Метод конвертиции матрицы в Cells
+    private ObservableCollection<CellBoard> ConvertMatrixToSell(List<List<char>> matrix)
+    {
+        if (matrix.Count <= 0)
+        {
+            return Cells;
+        }
+            
+        ObservableCollection<CellBoard> cells = Cells;
+            
+        foreach (var cell in cells)
+        {
+            var temp = matrix[cell.Column][cell.Row];
+            if (temp == 'w' || temp == 'b')
+            {
+                cell.Status = temp;
+            }
+            else
+            {
+                cell.Status = null;
+            }
+        }
+
+        return new ObservableCollection<CellBoard>(cells);
+            
     }
 }

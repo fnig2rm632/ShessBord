@@ -24,4 +24,26 @@ public class AppGameService(IGameApiClient gameApiClient, IAppTokenStorage appTo
             };
         }
     }
+
+    public async Task<GameResponseDto> PostStartedGameAsync()
+    {
+        try
+        {
+            var mainUser = appTokenStorage.GetTokens();
+            var game = new GameResponseDto
+            {
+                PlayerWhiteId = mainUser.userId,
+                PlayerBlackId = mainUser.userId,
+            };
+            var tmp = await gameApiClient.PostStartedGame(game, mainUser.AccessToken);
+            return tmp;
+        }
+        catch (Exception e)
+        {
+            return new GameResponseDto
+            {
+                Id = 0
+            };
+        }
+    }
 }

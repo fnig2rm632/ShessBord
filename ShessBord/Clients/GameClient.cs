@@ -9,14 +9,23 @@ using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-public class GameClient(string serverUrl, Guid playerId) : IGameClient
+public class GameClient : IGameClient
 {
-    private ClientWebSocket _webSocket = new();
+    private readonly string _serverUrl;
+    private readonly Guid _playerId;
+    private ClientWebSocket _webSocket;
+
+    public GameClient(string serverUrl, Guid playerId)
+    {
+        _serverUrl = "ws://192.168.1.106:5160";
+        _playerId = playerId;
+        _webSocket = new ClientWebSocket();
+    }
 
     // Подключение к серверу
     public async Task ConnectAsync()
     {
-        var uri = new Uri($"{serverUrl}/game-ws?playerId={playerId}");
+        var uri = new Uri($"{_serverUrl}/game-ws?playerId={_playerId}");
         await _webSocket.ConnectAsync(uri, CancellationToken.None);
         Console.WriteLine($"Connected to {uri}");
 
@@ -29,7 +38,7 @@ public class GameClient(string serverUrl, Guid playerId) : IGameClient
     {
         var move = new GameMove
         {
-            IdPlayer = playerId,
+            IdPlayer = _playerId,
             X = x,
             Y = y
         };
@@ -69,7 +78,7 @@ public class GameClient(string serverUrl, Guid playerId) : IGameClient
                     Console.WriteLine("Received game state:");
                     Console.WriteLine($"- Active player: {gameStatus.ActivePlayerId}");
                     Console.WriteLine($"- Current move: {gameStatus.CurrentMove}");
-                    Console.WriteLine($"- Field matrix: {gameStatus.FieldMatrix[0, 0]} ...");
+                    //Console.WriteLine($"- Field matrix: {gameStatus.FieldMatrix[0, 0]} ...");
                 }
                 else if (result.MessageType == WebSocketMessageType.Close)
                 {

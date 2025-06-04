@@ -11427,11 +11427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord.Android\\ShessBord.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord.Android\\ShessBord.Android.csproj",
       "projectName": "ShessBord.Android",
-      "projectPath": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord.Android\\ShessBord.Android.csproj",
+      "projectPath": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord.Android\\ShessBord.Android.csproj",
       "packagesPath": "C:\\Users\\Gamov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord.Android\\obj\\",
+      "outputPath": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord.Android\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "fallbackFolders": [
@@ -11454,8 +11454,8 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "projectReferences": {
-            "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj": {
-              "projectPath": "C:\\Users\\Gamov\\source\\repos\\ShessBord\\ShessBord\\ShessBord.csproj"
+            "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj": {
+              "projectPath": "C:\\Users\\Gamov\\source\\repos\\ShessBordTwo\\ShessBord\\ShessBord.csproj"
             }
           }
         }

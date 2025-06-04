@@ -15,86 +15,86 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ShessBord
-build_property.ProjectDir = C:\Users\Gamov\source\repos\ShessBord\ShessBord\
+build_property.ProjectDir = C:\Users\Gamov\source\repos\ShessBordTwo\ShessBord\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/App.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Controls/GoGameBoardControl.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Controls/GoGameBoardControl.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/AboutUsAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/AboutUsAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/AccountAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/AccountAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/AuthenticationAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/AuthenticationAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/ForgotPasswordAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/ForgotPasswordAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/FriendsAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/FriendsAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/HistoryAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/HistoryAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/MainView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/MainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/MatchAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/MatchAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/MenuAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/MenuAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/PlayAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/PlayAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/RegistrationAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/RegistrationAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Android/SettingsAndroidView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Android/SettingsAndroidView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/AboutUsDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/AboutUsDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/AccountDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/AccountDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/AuthenticationDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/AuthenticationDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/ForgotPasswordDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/ForgotPasswordDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/FriendsDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/FriendsDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/HistoryDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/HistoryDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/MainWindow.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/MatchDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/MatchDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/MenuDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/MenuDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/PlayDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/PlayDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/RegistrationDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/RegistrationDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Gamov/source/repos/ShessBord/ShessBord/Views/Desktop/SettingsDesktopView.axaml]
+[C:/Users/Gamov/source/repos/ShessBordTwo/ShessBord/Views/Desktop/SettingsDesktopView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

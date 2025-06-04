@@ -7,8 +7,12 @@ using ShessBord.Interfaces;
 
 namespace ShessBord.Services;
 
-public class AppMatchmakingService(IMatchmakingApiClient matchmakingApiClient,IAppTokenStorage appTokenStorage) : IAppMatchmakingService
+public class AppMatchmakingService(
+    IMatchmakingApiClient matchmakingApiClient,
+    IAppTokenStorage appTokenStorage,
+    IAppGameService appGameService) : IAppMatchmakingService
 {
+    private GameResponseDto newGame = new GameResponseDto();
     public async Task<bool> StartSearch(string type, int size)
     {
         try
@@ -22,7 +26,8 @@ public class AppMatchmakingService(IMatchmakingApiClient matchmakingApiClient,IA
             };
             var tmp = await matchmakingApiClient.StartSearch(game);
 
-            return !string.IsNullOrEmpty(tmp.Username);
+            var isGameFind = !string.IsNullOrEmpty(tmp.Username);
+            return isGameFind;
         }
         catch (Exception e)
         {
@@ -43,8 +48,8 @@ public class AppMatchmakingService(IMatchmakingApiClient matchmakingApiClient,IA
                 PlayerBlackId = "none"
             };
             var tmp = await matchmakingApiClient.Search(game);
-        
-            return !string.IsNullOrEmpty(tmp.Username);
+            var isGameFind = !string.IsNullOrEmpty(tmp.Username);
+            return isGameFind;
         }
         catch (Exception e)
         {
