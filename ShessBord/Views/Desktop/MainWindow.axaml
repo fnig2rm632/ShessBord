@@ -13,6 +13,8 @@
         mc:Ignorable="d" 
         Background="#302E2B"
         Height="900"
+        MinHeight="900"
+        MinWidth="1400"
         Icon="/Assets/logo.ico"
         Title="Go.com">
 	<Window.Resources>

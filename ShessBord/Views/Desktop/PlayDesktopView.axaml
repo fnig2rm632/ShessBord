@@ -76,7 +76,7 @@
 		<!--LeftPanel-->
 
 		<!--PlayBlock-->
-		<Grid RowDefinitions="100,50,500,Auto" ColumnDefinitions="*,500,500,*" HorizontalAlignment="Center" Width="1000" Grid.Column="1" Grid.Row="0">
+		<Grid ShowGridLines="False" RowDefinitions="100,50,500,Auto" ColumnDefinitions="*,500,*" HorizontalAlignment="Center" Width="1000" Grid.Column="1" Grid.Row="0">
 			<!--TextSizeBoard-->
 			<TextBlock 
 				Classes="TextBlockTitle"
@@ -85,13 +85,13 @@
 				Text="{Binding TextBoardSize}"/>
 			<!--TextSizeBoard-->
 			
-			<!--TextTime-->
+			<!--~1~TextTime@1@
 			<TextBlock 
 				Classes="TextBlockTitle"
 				Grid.Column="2" 
 				Grid.Row="1"
 				Text="{Binding TextTimeControl}"/>
-			<!--TextTime-->
+			~1~TextTime@1@-->
 			
 			<!--ChooseSizeBoard-->
 			<StackPanel
@@ -127,7 +127,7 @@
 			</StackPanel>
 			<!--ChooseSizeBoard-->
 			
-			<!--ChooseTime-->
+			<!--~1~ChooseTime@1@
 			<StackPanel
 				Grid.Column="2" 
 				Grid.Row="2">
@@ -198,30 +198,30 @@
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>
-			<!--ChooseTime-->
+			~1~ChooseTime@1@-->
 			
 			<!--ButtonPlay-->
-			<Button 
-				Grid.Column="2"
-				Grid.Row="3"
-				Height="100"
-				Margin="20"
-				Classes="ButtonMain">
-				
-				<TextBlock Text="Играть c человеком"/>
-			</Button>
-			<!--ButtonPlay-->
-			
-			<!--ButtonPlayMyself-->
 			<Button 
 				Grid.Column="1"
 				Grid.Row="3"
 				Height="100"
 				Margin="20"
-				Classes="ButtonMenu"
+				Classes="ButtonMain"
 				Command="{Binding NextToMatchCommand}">
-				<TextBlock Text="Играть сам с собой"/>
+				
+				<TextBlock Text="Играть c человеком"/>
 			</Button>
+			<!--ButtonPlay-->
+			
+			<!--~1~ButtonPlayMyself@1@
+			<Button 
+				Grid.Column="1"
+				Grid.Row="3"
+				Height="100"
+				Margin="20"
+				Classes="ButtonMenu">
+				<TextBlock Text="Играть сам с собой"/>
+			</Button>-->
 			<!--ButtonPlayMyself-->
 		</Grid>
 		<!--PlayBlock-->

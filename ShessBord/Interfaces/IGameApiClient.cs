@@ -10,4 +10,6 @@ public interface IGameApiClient
 {
     Task<ServiceResponse<List<GameResponseDto>>> GetGameList(string userId, string accessToken);
     Task<GameResponseDto> PostStartedGame(GameResponseDto? item, string accessToken);
+
+    Task<bool> FinishGame(GameResponseDto? item, string accessToken);
 }

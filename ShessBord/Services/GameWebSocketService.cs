@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 public class GameWebSocketService : IGameWebSocketService, IDisposable
 {
-    private readonly string _serverUrl = "ws://192.168.1.106:5160";
+    private readonly string _serverUrl = "ws://localhost:5160";
     private ClientWebSocket _webSocket;
     private readonly Subject<GameStatus> _gameUpdates = new();
     private CancellationTokenSource _cts;
@@ -28,11 +28,17 @@ public class GameWebSocketService : IGameWebSocketService, IDisposable
 
     public async Task ConnectAsync(Guid playerId)
     {
-        if (_webSocket.State == WebSocketState.Open)
+        if (_webSocket != null && _webSocket.State == WebSocketState.Open)
             await DisconnectAsync();
-        
+
+        _webSocket?.Dispose();  // Очистка
+        _cts = new CancellationTokenSource();
+        _webSocket = new ClientWebSocket();
+
         var uri = new Uri($"{_serverUrl}/game-ws?playerId={playerId}");
         await _webSocket.ConnectAsync(uri, _cts.Token);
+
+        Console.WriteLine("WebSocket connected, starting receive loop");
         _ = ReceiveMessagesAsync();
     }
 
@@ -62,11 +68,13 @@ public class GameWebSocketService : IGameWebSocketService, IDisposable
 
     private async Task ReceiveMessagesAsync()
     {
+        
         var buffer = new byte[1024 * 4];
         try
         {
             while (_webSocket.State == WebSocketState.Open && !_cts.IsCancellationRequested)
             {
+                Console.WriteLine("Started receiving messages");
                 var result = await _webSocket.ReceiveAsync(
                     new ArraySegment<byte>(buffer),
                     _cts.Token
@@ -103,7 +111,7 @@ public class GameWebSocketService : IGameWebSocketService, IDisposable
     
     public async Task DisconnectAsync()
     {
-        if (_webSocket == null || _disposed)
+        if (_webSocket == null)
             return;
 
         try
@@ -125,8 +133,11 @@ public class GameWebSocketService : IGameWebSocketService, IDisposable
         {
             _webSocket.Dispose();
             _cts.Cancel();
-            _gameUpdates.OnCompleted();
-            _disposed = true;
+        
+            // НЕ закрывай Subject, иначе новые подписчики ничего не получат
+            // _gameUpdates.OnCompleted(); ❌
+        
+            _webSocket = null;
         }
     }
 

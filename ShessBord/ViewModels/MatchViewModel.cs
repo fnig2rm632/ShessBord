@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
 using ShessBord.Controls;
 using ShessBord.Controls.GoBordControl;
+using ShessBord.DTO.Game;
 using ShessBord.Interfaces;
 using ShessBord.Models;
 
@@ -119,6 +120,14 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
             set => this.RaiseAndSetIfChanged(ref _size, value);
         }
         
+        private  List<GameMove> _move = new List<GameMove>();
+        public List<GameMove> Move
+        {
+            get => _move;
+            set => this.RaiseAndSetIfChanged(ref _move, value);
+        }
+
+        public string Oponent = "";
         
         private ObservableCollection<CellBoard> _cells = new();
         public ObservableCollection<CellBoard> Cells
@@ -137,19 +146,24 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
                 this.RaiseAndSetIfChanged(ref _gameStatus, value);
                 
                 Cells = ConvertMatrixToSell(value.FieldMatrix);
+                Move = value.MoveHistory;
+                Oponent = value.Player1Id.ToString() == _tokenStorage.GetTokens().userId ? value.Player2Id.ToString() : value.Player1Id.ToString();
                 
                 if (value.WinPlayer == value.Player1Id || value.WinPlayer == value.Player2Id)
                 {
-                    FinishGame(value.WinPlayer.ToString() == _tokenStorage.GetTokens().userId);
+                    var item = _tokenStorage.GetTokens().userId;
+                    FinishGame(value.WinPlayer.ToString() == item, value);
                 }
             }
         }
 
-        private void FinishGame(bool isWin)
+        private void FinishGame(bool isWin,GameStatus _gameStatus)
         {
             IsLoading = true;
             Result = isWin ? "Победа" : "Поражение";
             _gameWebSocketService.DisconnectAsync();
+
+            
         }
         
 
@@ -193,7 +207,7 @@ public class MatchViewModel : ViewModelBase, IRoutableViewModel
         _appGameService = appGameService;
 
         _localization.LanguageChanged.Subscribe(_ => UpdateLocalizedProperties());
-        
+        Cells = new ObservableCollection<CellBoard>();
         _ = StartGame();
         
         ChangeLanguageCommand = ReactiveCommand.Create<string>(code => 

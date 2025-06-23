@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Avalonia.Media;
 using ShessBord.DTO.Game;
 using ShessBord.Interfaces;
 using ShessBord.Models;
@@ -44,6 +45,20 @@ public class AppGameService(IGameApiClient gameApiClient, IAppTokenStorage appTo
             {
                 Id = 0
             };
+        }
+    }
+
+    public async Task<bool> FinishGameAsync(GameResponseDto? item)
+    {
+        try
+        {
+            var mainUser = appTokenStorage.GetTokens();
+            var tmp = await gameApiClient.FinishGame(item,mainUser.AccessToken);
+            return tmp;
+        }
+        catch (Exception e)
+        {
+            return false;
         }
     }
 }

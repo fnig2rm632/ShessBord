@@ -122,6 +122,7 @@
 					Height="360">
 					<!--FirstButton-->
 					<Button 
+						Command="{Binding NextToPlayCommand}"
 						Classes="ButtonMenu">
 						<StackPanel Orientation="Horizontal">
 							<Image Margin="10 0" Height="45" Source="/Assets/Oclock.png"/>
@@ -132,6 +133,7 @@
 					
 					<!--SecondButton-->
 					<Button 
+						Command="{Binding NextToPlayCommand}"
 						Margin="0 18 0 0 " 
 						Classes="ButtonMenu">
 						<StackPanel Orientation="Horizontal">
@@ -179,8 +181,7 @@
 						<Button 
 							Classes="ButtonTransparent" 
 							HorizontalAlignment="Stretch" 
-							Height="50"
-							Command="{Binding NextToAccountCommand}">
+							Height="50">
 							<DockPanel>
 								<TextBlock 
 									Margin="10 0 0 0"

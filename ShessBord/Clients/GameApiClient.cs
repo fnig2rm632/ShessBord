@@ -28,4 +28,10 @@ public class GameApiClient : ApiClientBase, IGameApiClient
         var tmp =  await PostAsync<GameResponseDto>("game",item,accessToken);
         return tmp;
     }
+
+    public async Task<bool> FinishGame(GameResponseDto? item, string accessToken)
+    {
+        var tmp =  await PostAsync<bool>("finish-game",item,accessToken);
+        return tmp; 
+    }
 }

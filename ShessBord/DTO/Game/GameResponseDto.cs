@@ -12,13 +12,12 @@ public class GameResponseDto
     public string PlayerBlackId { get; set; } = null!;
     public string? PlayerWhiteName { get; set; } = null!;
     public string? PlayerBlackName { get; set; } = null!;
-    
     public string? PlayerWinId { get; set; } = null!;
     public DateTime? StartTime { get; set; } 
     public DateTime? EndTime { get; set; } 
     public string? Type { get; set; }
     
-    // Доп
+    // Дополнительно
     public string? SizeBoard => $"{BoardSize}x{BoardSize}";
     public TimeSpan? Time => EndTime - StartTime;
     

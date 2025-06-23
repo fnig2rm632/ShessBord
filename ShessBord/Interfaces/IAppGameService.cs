@@ -9,4 +9,5 @@ public interface IAppGameService
 {
     Task<ServiceResponse<List<GameResponseDto>>> GetUserProfileAsync();
     Task<GameResponseDto> PostStartedGameAsync();
+    Task<bool> FinishGameAsync(GameResponseDto? item);
 }

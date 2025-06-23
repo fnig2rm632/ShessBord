@@ -25,6 +25,7 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         private readonly IServiceProvider _serviceProvider;
         private readonly IAppSettingsService _appSettingsService;
         private readonly IAppMatchmakingService _appMatchmakingService;
+        private readonly IGameWebSocketService _gameWebSocketService;
 
         #endregion
 
@@ -124,7 +125,7 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
     }
     
     public ReactiveCommand<Unit,Unit> HidePanelCommand { get; }
-    
+
     #endregion
 
     public PlayViewModel(
@@ -132,13 +133,15 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
         IAppLocalizationService localization,
         IServiceProvider serviceProvider,
         IAppSettingsService appSettingsService,
-        IAppMatchmakingService appMatchmakingService)
+        IAppMatchmakingService appMatchmakingService,
+        IGameWebSocketService gameWebSocketService)
     { 
         HostScreen = screen;
         _localization = localization;
         _serviceProvider = serviceProvider;
         _appSettingsService = appSettingsService;
         _appMatchmakingService = appMatchmakingService;
+        _gameWebSocketService = gameWebSocketService;
 
         _localization.LanguageChanged.Subscribe(_ => UpdateLocalizedProperties());
         
@@ -178,7 +181,7 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
     {
         IsLoading = true;
         
-        var isOponent = await _appMatchmakingService.StartSearch("Bullet", 9);
+        var isOponent = await _appMatchmakingService.StartSearch("Bullet", SelectedBoardIndex);
         while (IsLoading)
         {
             if (isOponent)
@@ -189,9 +192,9 @@ public class PlayViewModel : ViewModelBase, IRoutableViewModel
                 IsLoading = false;
             }
             
-            await Task.Delay(1000);
+            await Task.Delay(500);
             
-            isOponent = await _appMatchmakingService.Search("Bullet", 9);
+            isOponent = await _appMatchmakingService.Search("Bullet", SelectedBoardIndex);
         }
     }
     

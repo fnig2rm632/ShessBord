@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShessBord")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d9f1ae041621ab4bc47c44aebab8574987b3494")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3c90ee1978ac8631ac3c0f068f5f44a662ba1df")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShessBord")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShessBord")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

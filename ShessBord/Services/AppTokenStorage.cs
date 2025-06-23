@@ -55,7 +55,6 @@ public class AppTokenStorage : IAppTokenStorage
     {
         if (!File.Exists(_storagePath))
             return (null, null, null)!;
-
         var allBytes = File.ReadAllBytes(_storagePath);
         var salt = allBytes[..SaltSize];
         var iv = allBytes[SaltSize..(SaltSize + IvSize)];
